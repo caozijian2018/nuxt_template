@@ -1,0 +1,24 @@
+{
+  "name": "caoyao",
+  "version": "1.0.0",
+  "description": "ceshi",
+  "author": "caoyao",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=dev nuxt",
+    "build": "NODE_ENV=prod nuxt build",
+    "build_dev_online": "NODE_ENV=dev_online nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "ant-design-vue": "^1.1.10",
+    "jquery": "^3.4.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "nuxt": "^2.0.0",
+    "vue-i18n": "^8.15.1"
+  },
+  "devDependencies": {}
+}
