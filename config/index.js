@@ -1,4 +1,7 @@
 var env = process.env.NODE_ENV
+console.log('wwwwwwwwwwww')
+console.log(env)
+
 if (env == 'prod') {
     BASE_URL = 'http://humorboom.com'
     API_URL = 'http://humorboom.com/backend/'
@@ -6,7 +9,7 @@ if (env == 'prod') {
     BASE_URL = 'http://humorboom.com'
     API_URL = 'http://humorboom.com/backend/'
 }else {
-    BASE_URL = 'http://localhost:3000'
+    BASE_URL = 'http://localhost:9000/'
     API_URL = 'http://humorboom.com/backend/'
 }
 module.exports = {

@@ -4,6 +4,12 @@
   "description": "ceshi",
   "author": "caoyao",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "9000"
+    }
+  },
   "scripts": {
     "dev": "NODE_ENV=dev nuxt",
     "build": "NODE_ENV=prod nuxt build",
@@ -13,7 +19,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/component-cache": "^1.1.5",
     "ant-design-vue": "^1.1.10",
+    "element-ui": "^2.13.0",
     "jquery": "^3.4.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

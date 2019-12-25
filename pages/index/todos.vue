@@ -24,6 +24,7 @@
 import { mapMutations, mapState, mapGetters } from "vuex";
 
 export default {
+    transition: 'fade',
     computed: {
         todos_() {
             return this.$store.state.todos.list;
