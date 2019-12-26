@@ -1,5 +1,5 @@
 <template>
-    <div class="width_100">
+    <div class="width_100 bottom_rowgame overflow_hidden">
         <div class="">
             <img class="width_100" src="../../static/img/python.png" alt="">
         </div>
@@ -20,4 +20,14 @@ export default {
 
 </script>
 <style lang='less'>
+.bottom_rowgame{
+    img{
+        transition-duration: .5s;
+    }
+    &:hover{
+        img{
+            transform: scale(1.5)
+        }
+    }
+}
 </style>

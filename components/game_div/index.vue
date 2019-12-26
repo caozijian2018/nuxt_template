@@ -1,10 +1,10 @@
 <template>
-    <div class="display_flex width_100">
-        <div class="flex_1">
+    <div class="display_flex width_100 phone_block gamedi ">
+        <div class="flex_1 overflow_hidden">
             <img class="width_100" src="../../static/img/python.png" alt="">
         </div>
         <div class="flex_1 margin_left_8">
-            <span>XXXXXXXXXXXXXXX</span>
+            <span :class="isWhite ? 'white' : ''">XXXXXXXXXXXXXXX</span>
             <star :text-is-red="true"></star>
         </div>
     </div>
@@ -13,6 +13,12 @@
 <script>
 import star from "../../components/star"
 export default {
+    props: {
+        isWhite: {
+            type: Boolean,
+            default: false
+        }
+    },
     components: {
        star 
     }
@@ -20,4 +26,16 @@ export default {
 
 </script>
 <style lang='less'>
+.gamedi{
+
+    img{
+        transition-duration: .5s;
+    }
+    &:hover{
+        img{
+            transform: scale(1.5)
+        }
+    }
+}
+
 </style>

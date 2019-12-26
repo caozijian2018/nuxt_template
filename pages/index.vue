@@ -16,16 +16,16 @@ Vue.prototype.$jquery = jquery;
 import init_token from "../util/init_token";
 init_token();
 export default {
+    // layout: "us",
     mounted() {}
 };
 </script>
 
 <style lang="less">
-@import "http://static.game-park.net/global_css.css";
-@import "http://at.alicdn.com/t/font_1577414_g8069mhru8s.css";
+// @import "http://static.game-park.net/global_css.css";
+@import "http://at.alicdn.com/t/font_1577414_40qjo3s2wj7.css";
 
 .container {
-    background: #dddddd;
     height: 100vh;
     width: 100vw;
 }

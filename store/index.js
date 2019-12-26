@@ -3,6 +3,8 @@ export const state = () => ({
     locale: "en",
     banner_height: 0,
     big_banner_height: 0,
+    is_pc: false,
+    show_hover: false
 
 });
 export const getters = {
@@ -11,9 +13,18 @@ export const getters = {
     },
     getBigBannerHeight(state) {
         return state.big_banner_height;
-    }
+    },
+    getIsPc(state) {
+        return state.is_pc;
+    },
+    getShowHover(state) {
+        return state.show_hover;
+    },
 }
 export const mutations = {
+    changeShowHover(state) {
+        state.show_hover = !state.show_hover;
+    },
     increment(state) {
         state.counter++;
     },
@@ -25,5 +36,8 @@ export const mutations = {
     },
     changeBigBannerHeight(state, banner_height) {
         state.big_banner_height = banner_height;
+    },
+    ChangeisPc(state, val){
+        state.is_pc = val;
     }
 };

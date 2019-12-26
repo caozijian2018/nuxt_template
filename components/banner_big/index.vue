@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="big_box">
         <el-carousel
             class="flex_1 banner_big_box"
             arrow="always"
@@ -11,9 +11,9 @@
                 <div>
                     <img src="../../static/img/python.png" class="width_100" alt />
                     <div class="position_absolute desc_banner_box">
-                        <div class="action_div text_center app_back_red white font_size_15">ACTION</div>
-                        <div class="font_size_15 font_weight_600">FRUIT</div>
-                        <star></star>
+                        <div class="action_div text_center app_back_red white">ACTION</div>
+                        <div class="font_size_20 margin_top_10 margin_bottom_10 font_weight_600">FRUIT</div>
+                        <star :text-is-red="true"></star>
                     </div>
                 </div>
             </el-carousel-item>
@@ -56,4 +56,15 @@ export default {
 };
 </script>
 <style lang='less'>
+@import "../../assets/css/them";
+.big_box{
+    .el-carousel__arrow{
+        border-radius: 0px;
+    }
+    .desc_banner_box{
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+}
 </style>

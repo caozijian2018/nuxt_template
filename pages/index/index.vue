@@ -1,33 +1,18 @@
 <template>
-    <div class="dark display_flex flex_column height_100" style="background: #ddd">
+    <div class="dark display_flex flex_column height_100">
         <app-head></app-head>
         <div
             class="flex_1 child_box overflow_scroll scroll_box"
-            style
         >
             <nuxt-child></nuxt-child>
         </div>
-        <!-- <h1> 
-        </h1>
-        <div class="x">
-            1
-            <div class="o">2</div>
-            <h1 class="backred">
-                {{$t('words.most_recent')}}
-                dd
-            </h1>
-            <h1>
-                {{$store.state.locale}}
-            </h1>
-        </div>
-        <div @click="$store.commit('changeLang', 'es')">
-            Change Lang
-        </div>-->
     </div>
 </template>
 
 <script>
 import glo_axios from "../../util/glo_request";
+import isPc from "../../util/is_pc";
+
 import appHead from "../../components/app_header";
 import i18n from "../../plugins/i18n";
 export default {
@@ -37,7 +22,6 @@ export default {
     transition: "fade",
     // loading: true,
     middleware: "auth",
-    layout: "default",
     async asyncData({ store, query }) {
         // var lang = query.lang || query.country || store.state.locale || "en";
         var lang = "en";
@@ -66,6 +50,13 @@ export default {
         };
     },
     methods: {
+        watchOnresize() {
+            window.onresize = this.setHeightAndPhoneOrPc;
+        },
+        setHeightAndPhoneOrPc() {
+            this.$store.commit("ChangeisPc", isPc())
+            // history.go(0)
+        },
         jdt() {
             this.$nextTick(() => {
                 this.$nuxt.$loading.start();
@@ -74,6 +65,8 @@ export default {
         }
     },
     mounted() {
+        this.watchOnresize();
+        this.setHeightAndPhoneOrPc();
         // this.jdt();
         console.log(888);
         this._i18n.locale = "es";
@@ -100,8 +93,8 @@ export default {
 };
 </script>
 <style lang="less">
-// @import "../../assets/css/them.less";
-// .child_box{
-//     background: @red;
-// }
+@import "../../assets/css/them.less";
+.child_box{
+    .app_back_yellow;
+}
 </style>

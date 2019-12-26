@@ -1,21 +1,34 @@
 <template>
     <div>
-        <div class="app_heahder">
+        <div class="app_heahder phone_none">
             <div class="width_90 display_flex flex_jusify_space margin_auto height_100">
-                <img src="../../static/img/logo.png" class="width_15" alt="">
+                <img src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
                 <img src="../../static/img/head_logo_right.png" class="width_80" alt="">
             </div>
         </div>
-        <div class="div_nav">
+        <div class="div_nav phone_none">
             <div class="margin_auto head_div display_flex width_97 height_100">
                 <div  class="height_100 margin_right_3 position_relative white"  style="background: red; width:130px;">
                     <span class="pcs">HOME</span>
                 </div>
-                <div v-for="item in head_title_arr" class="single_cate margin_right_3 position_relative white" :key="item.id">
+                <div v-for="item in head_title_arr" class="single_cate overflow_hidden margin_right_3 position_relative white" :key="item.id">
                     <!-- {{item.name}} -->
-                    <div class="canvas_div width_100" :style="{background: item.color}"></div>
+                    <div class="back_box width_100" :style="{background: item.color}"></div>
                     <span class="pcs">{{item.name}}</span>
                 </div>
+            </div>
+        </div>
+        <div class="hoverdiv" v-if="$store.getters.getShowHover" style="top:50px"></div>
+        <div class="phone_block phone_show phone_head_box position_relative z_index12">
+            <div class="width_90 margin_auto height_100 flex_align_center display_flex flex_jusify_space white">
+                <i class="iconfont icon-xuanxiang option_icon" @click="clickOption()" :class="{'rotate90deg': this.show_select}" style="font-size: 30px"></i>
+                <img src="../../static/img/logo.png" class="width_33" alt="">
+                <i class="iconfont icon-xuanxiang"  style="font-size: 30px;color:transparent"></i>
+            </div>
+        </div>
+        <div :class="{'show_select': show_select}" class="cate_list_box width_100 cate_div_select z_index11 font_size_15 position_absolute phone_show">
+            <div v-for="item in head_title_arr" :key="item.id" class="cate_little_div">
+                {{item.name}}
             </div>
         </div>
     </div>
@@ -25,6 +38,7 @@
 export default {
     data(){
         return {
+            show_select: false,
             head_title_arr: [
                 {id:1,name:"HOME", color: "red"},
                 {id:2,name:"SPORT", color: "blue"},
@@ -37,7 +51,7 @@ export default {
         }
     },
     mounted(){
-        // var canvas = document.querySelector(".canvas_div");
+        // var canvas = document.querySelector(".back_box");
         // var context = canvas.getContext("2d");
         // canvas.width = 140;
         // canvas.height = 50;
@@ -46,6 +60,10 @@ export default {
         // this.drawCloud(context);
     },
     methods: {
+        clickOption(){
+            this.show_select = !this.show_select;
+            this.$store.commit("changeShowHover");
+        },
         drawCloud(cxt){
             cxt.save();
             cxt.beginPath();
@@ -77,6 +95,44 @@ export default {
 </script>
 <style lang='less'>
 @import "../../assets/css/them";
+// 手机
+ .cate_div_select{
+        background: @black;
+        padding: 20px 10px;
+        left: 0;
+        top: -1000px;
+        transition-duration: .5s;
+        color: white;
+        &>div{
+            margin: 10px 0;
+        }
+        &.show_select{
+            top: 50px;
+        }
+    }
+
+.cate_little_div{
+        height: 50px;
+        line-height: 50px;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+        background: darken(@black, 10%);
+        text-align: center;
+    }
+.phone_head_box{
+    background: @black;
+    height: 50px;
+    .option_icon{
+        transition-duration: .4s;
+        &.rotate90deg{
+            transform: rotate(90deg)
+        }
+    }
+    
+}
+@width: 140px;
 .app_heahder{
     height: 50px;
     background: @yellow;
@@ -96,15 +152,19 @@ export default {
         height: 100%;
         .single_cate{
             height: 100%;
-            .canvas_div{
-                width: 140px;
+            cursor: pointer;
+            .back_box{
+                width: @width;
                 height: 3px;
-                transition-property: height;
+                // transition-property: height;
                 transition-duration: .4s;
             }
             &:hover{
-                .canvas_div{
+                .back_box{
                     height: 100%;
+                    border-bottom-right-radius: @width/2;
+                    border-bottom-left-radius: @width/2;
+
                 }
             }
         }

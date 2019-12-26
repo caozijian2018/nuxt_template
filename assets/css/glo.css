@@ -169,9 +169,32 @@ html {
 .width_40 {
     width: 40%;
 }
+.input_app {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
 
+.margin_right_7px {
+    margin-right: 7px;
+}
+.action_div {
+    padding: 3px;
+    font-size: 15px;
+    width: 70px;
+    box-sizing: content-box;
+}
 .width_33 {
     width: 33%;
+}
+.width_200px {
+    width: 200px;
 }
 .width_32 {
     width: 32%;
@@ -198,10 +221,12 @@ html {
     width: 24.5%;
 }
 
-.z_index100 {
-    z-index: 100;
+.z_index11 {
+    z-index: 11;
 }
-
+.z_index12 {
+    z-index: 12;
+}
 .width_15 {
     width: 15%;
 }
@@ -233,7 +258,7 @@ html {
 .flex_row {
     flex-direction: row;
 }
-.align_content_strech{
+.align_content_strech {
     align-content: stretch;
 }
 .flex_align_stretch {
@@ -358,8 +383,8 @@ html {
 .margin_left_8 {
     margin-left: 8px;
 }
-.border_bottom{
-    border-bottom: 1px solid #000; 
+.border_bottom {
+    border-bottom: 1px solid #000;
 }
 .margin_left_3 {
     margin-left: 0.3rem;
@@ -388,7 +413,9 @@ html {
 .margin_left_17 {
     margin-left: 1.7rem;
 }
-
+/* .phone_block {
+    display: none;
+} */
 .margin_left_18 {
     margin-left: 1.8rem;
 }
@@ -420,7 +447,7 @@ html {
 .margin_right_20 {
     margin-right: 2rem;
 }
-.margin_right_3{
+.margin_right_3 {
     margin-right: 3px;
 }
 .margin_top_1 {
@@ -429,6 +456,9 @@ html {
 
 .margin_bottom_1 {
     margin-bottom: 1rem;
+}
+.margin_bottom_10 {
+    margin-bottom: 10px;
 }
 
 .margin_bottom_15 {
@@ -466,7 +496,7 @@ html {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 10;
 }
 
 .position_absolute {
@@ -481,7 +511,7 @@ html {
     position: absolute;
     left: 50%;
     top: 50%;
-    z-index: 1002;
+    z-index: 9;
     transition: 0.4s;
     transform: translate(-50%, -50%);
 }
@@ -532,7 +562,6 @@ html {
     display: none;
 }
 
-/* 婵犮垹鐖㈤崒婊嗗800闂佹眹鍔岀€氼參鎮ч崡鐑嗗殨闁跨噦鎷� */
 .media_wrop_800 {
     flex-wrap: nowrap;
 }
@@ -569,12 +598,12 @@ html {
     min-width: 340px;
 }
 
-/* 闁诲繐绻愮换瀣姳閿燂拷800 闂佹眹鍔岀€氼剟寮伴崒婧惧亾绾板瀚� */
+/*   */
 @media screen and (max-width: 800px) {
     .el-message {
         width: 90%;
     }
-
+    
     .meidia_margin_top_3 {
         margin-top: 3px;
     }
@@ -668,5 +697,104 @@ html {
 
     .pc_flex > div {
         width: 24%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .phone_text_center{
+        text-align: center;
+    }
+    .phone_width_80{
+        width: 80%;
+    }
+    .phone_width_100{
+        width: 100%;
+    }
+    .phone_width_49{
+        width: 49%;
+    }
+    .phone_margin_left_0{
+        margin-left: 0;
+    }
+    .phone_font_size_30px {
+        font-size: 30px;
+    }
+
+    .pc_margin_top-70px {
+        margin-top: 0px;
+    }
+    .phone_margin_top_20px {
+        margin-top: 20px;
+    }
+    .phone_margin_top_0 {
+        margin-top: 0;
+    }
+    .el-message {
+        width: 90%;
+    }
+    .phone_block {
+        display: block;
+    }
+    .phone_none {
+        display: none;
+    }
+    .meidia_margin_top_3 {
+        margin-top: 3px;
+    }
+
+    .media_width_100px_800 {
+        width: 100%;
+    }
+
+    .media_screen_none {
+        display: none;
+    }
+
+    .display_by_screen_800 {
+        display: block;
+    }
+
+    .media_wrop_800 {
+        flex-wrap: wrap;
+    }
+
+    .media_width_80_800 {
+        width: 100%;
+    }
+
+    .el-dialog {
+        width: 90%;
+    }
+
+    .media_flex_row_800 {
+        flex-direction: column;
+    }
+
+    .media_width_20_800 {
+        width: 100%;
+    }
+
+    .media_width_40_800 {
+        width: 100%;
+    }
+
+    .media_width_50_800 {
+        width: 100%;
+    }
+
+    .media_height_300 {
+        height: 300px;
+    }
+    .phone_radius_20px {
+        border-radius: 20px;
+    }
+    .phone_padding_left_0 {
+        padding-left: 0;
+    }
+    .phone_padding_20px {
+        padding: 20px;
+    }
+    .phone_width_30p{
+        width: 30%;
     }
 }
