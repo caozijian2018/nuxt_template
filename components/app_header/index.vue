@@ -41,12 +41,10 @@ export default {
             show_select: false,
             head_title_arr: [
                 {id:1,name:"HOME", color: "red"},
-                {id:2,name:"SPORT", color: "blue"},
-                {id:3,name:"ARCADE", color: "yellow"},
-                {id:4,name:"OTHERS", color: "blue"},
-                {id:5,name:"CONTACT", color: "gray"},
-                {id:6,name:"ACTION", color: "orange"},
-                {id:7,name:"TANK", color: "blue"},
+                {id:2,name:"PUZZLE", color: "blue"},
+                {id:3,name:"STRATEGY", color: "green"},
+                {id:4,name:"ADVENTURE", color: "blue"},
+                {id:5,name:"OTHERS", color: "gray"}
             ]
         }
     },
@@ -130,7 +128,7 @@ export default {
             transform: rotate(90deg)
         }
     }
-    
+
 }
 @width: 140px;
 .app_heahder{

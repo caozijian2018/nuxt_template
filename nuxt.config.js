@@ -43,7 +43,7 @@ export default {
     env: {
         baseUrl: BASE_URL,
         API_URL: API_URL,
-        WTAT_THIS_APP: "humorboom"
+        WTAT_THIS_APP: "mygameparty"
     },
     /*
      ** Plugins to load before mounting the App
@@ -69,7 +69,7 @@ export default {
     ],
     proxy: {
         "/backend": {
-            target: "http://humorboom.com",
+            target: "http://mygameparty.com",
             pathRewrite: {
                 "^/backend": "/backend"
             }

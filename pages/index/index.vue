@@ -27,22 +27,22 @@ export default {
         var lang = "en";
         // store.state.locale = lang;
         var page = 1;
-        return Promise.all([
-            glo_axios("album", "get", {
-                capacity: 16,
-                ordering: "-create_time",
-                page,
-                lang
-            })
-            // glo_axios("site", "get", {})
-        ]).then(res => {
-            return {
-                list: res[0].results,
-                total: res[0].count,
-                // banner: res[1],
-                page_: page
-            };
-        });
+        // return Promise.all([
+        //     glo_axios("album", "get", {
+        //         capacity: 16,
+        //         ordering: "-create_time",
+        //         page,
+        //         lang
+        //     })
+        //     // glo_axios("site", "get", {})
+        // ]).then(res => {
+        //     return {
+        //         list: res[0].results,
+        //         total: res[0].count,
+        //         // banner: res[1],
+        //         page_: page
+        //     };
+        // });
     },
     data() {
         return {
@@ -68,27 +68,20 @@ export default {
         this.watchOnresize();
         this.setHeightAndPhoneOrPc();
         // this.jdt();
-        console.log(888);
         this._i18n.locale = "es";
-        console.log(this._i18n.locale);
-
         this.$store.commit("changeLang", "es");
         console.log(this.$store.state.locale);
         this.$http("album", "get", {
             capacity: 16,
             ordering: "-create_time",
+            category: "HH5",
             page: 1,
             lang: "en"
-        })
-            .then(res => {
+        }).then(res => {
                 console.log(res);
-            })
-            .catch(res => {
+            }).catch(res => {
                 console.log(res);
             });
-        // this.$store.commit('changeLang', 'es')
-        console.log(this.list);
-        console.log(this.total);
     }
 };
 </script>

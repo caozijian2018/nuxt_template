@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Message } from 'element-ui'
 var instance = axios.create({
-    baseURL: "http://humorboom.com/backend/",//process.env.baseUrl,
+    baseURL: "http://mygameparty.com/backend/",//process.env.baseUrl,
     timeout: 5000,
   });
   instance.interceptors.response.use(

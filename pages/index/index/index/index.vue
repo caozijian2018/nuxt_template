@@ -16,12 +16,12 @@
                         <div class="margin_top_20">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Nam necessitatibus similique dicta pariatur voluptate? Nihil,
-                            voluptate molestias distinctio quos nesciunt 
+                            voluptate molestias distinctio quos nesciunt
                             laboriosam vero alias deserunt?
                         </div>
                     </div>
                     <div class="flex_1 margin_left_15 wrop phone_margin_top_20px phone_margin_left_0">
-                        <div v-for="i in 4" :key="i">
+                        <div v-for="i in 3" :key="i">
                             <game-div></game-div>
                             <div class="border_bottom margin_top_20 margin_bottom_2" v-if="i < 4"></div>
                         </div>
@@ -39,9 +39,9 @@
             <div class="flex_1 margin_left_38 phone_margin_left_0">
                 <red-line class="margin_bottom_3"></red-line>
                 <game-text-bottom-row class="margin_bottom_15"></game-text-bottom-row>
-                <game-div v-for="i in 4" class="margin_bottom_2" :key="i"></game-div>
+                <game-div v-for="i in 3" class="margin_bottom_2" :key="i"></game-div>
                 <red-line class="margin_bottom_3"></red-line>
-                <game-div v-for="i in 4" class="margin_bottom_2" :key="i"></game-div>
+                <game-div v-for="i in 3" class="margin_bottom_2" :key="i"></game-div>
             </div>
         </div>
         <div class="width_97 margin_auto margin_bottom_4">
@@ -72,6 +72,73 @@ export default {
         gameTextBottomRow,
         bannerBig,
         appFooter
+    },
+    data() {
+        return {
+            list: []
+        };
+    },
+    mounted(){
+        this.getList()
+    },
+    methods: {
+        getList(tag) {
+            this.$http("album/", "get", {
+                capacity: 16,
+                ordering: "-create_time",
+                category: "HH5",
+                page: 1,
+                tags: tag,
+                lang: "en"
+            }).then(res => {
+                console.log(res);
+            }).catch(res => {
+                console.log(res);
+            });
+        },
+        getSite() {
+            this.$http("site/", "get", {
+                capacity: 16,
+                ordering: "-create_time",
+                category: "HH5",
+                page: 1,
+                tags: tag,
+                lang: "en"
+            }).then(res => {
+                console.log(res);
+            }).catch(res => {
+                console.log(res);
+            });
+        },
+        clickOption(){
+            this.show_select = !this.show_select;
+            this.$store.commit("changeShowHover");
+        },
+        drawCloud(cxt){
+            cxt.save();
+            cxt.beginPath();
+            cxt.moveTo(0, 0);
+
+            // cxt.bezierCurveTo(0, 20, 140, 20, 140, 0);
+            // // cxt.lineTo(140,50);
+            // cxt.lineTo(0,0);
+            // 画长方形
+            cxt.lineTo(140,0);
+            cxt.lineTo(140,10);
+            cxt.lineTo(0,10);
+            // cxt.moveTo(0, 0);
+            // cxt.bezierCurveTo(250, 300, 350, 550, 800, 390);
+            // cxt.lineTo(800,0);
+            // cxt.lineTo(0,0);
+            cxt.closePath();
+            var lineStyle = cxt.createLinearGradient(0, 50, 140, 0);
+            lineStyle.addColorStop(0, "#00AA58");
+            lineStyle.addColorStop(0.3, "#63AA7B");
+            lineStyle.addColorStop(1, "#04AA00");
+            cxt.fillStyle = lineStyle;
+            cxt.fill();
+            cxt.restore();
+        }
     }
 };
 </script>
