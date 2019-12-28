@@ -60,7 +60,9 @@ export default {
     },
     methods: {
         goTag(tag) {
-
+            this.$router.push({
+                path: '/categary/' + tag,
+            })
         },
         clickOption(){
             this.show_select = !this.show_select;

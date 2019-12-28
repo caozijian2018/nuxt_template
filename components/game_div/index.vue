@@ -1,5 +1,5 @@
 <template>
-    <div class="display_flex width_100 phone_block gamedi ">
+    <div class="display_flex width_100 phone_block gamedi " @click="playGame">
         <div class="flex_1 overflow_hidden">
             <img class="width_100" src="../../static/img/python.png" alt="">
         </div>
@@ -26,6 +26,13 @@ export default {
     },
     components: {
        star
+    },
+    methods: {
+        playGame() {
+            this.$router.push({
+                path: '/play/' + this.game.id,
+            })
+        }
     }
 }
 

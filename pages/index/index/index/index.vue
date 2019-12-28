@@ -102,10 +102,10 @@
         },
         mounted() {
             this.getAdventure();
-            this.getAdventure(73);
-            this.getAdventure(74);
-            this.getAdventure(75);
-            this.getAdventure(76);
+            // this.getAdventure(73);
+            // this.getAdventure(74);
+            // this.getAdventure(75);
+            // this.getAdventure(76);
             this.getSite();
         },
         methods: {
@@ -153,8 +153,8 @@
                     this.others_game.big = res_data.slice(0, 1);
                     this.others_game.other = res_data.slice(1, 3);
                 } else {
-                    this.list.big = res_data.slice(0, 3);
-                    this.list.small = res_data.slice(3, 7);
+                    // this.list.big = res_data.slice(0, 3);
+                    // this.list.small = res_data.slice(3, 7);
                 }
             },
             clickOption() {
