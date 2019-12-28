@@ -71,17 +71,17 @@ export default {
         this._i18n.locale = "es";
         this.$store.commit("changeLang", "es");
         console.log(this.$store.state.locale);
-        this.$http("album", "get", {
-            capacity: 16,
-            ordering: "-create_time",
-            category: "HH5",
-            page: 1,
-            lang: "en"
-        }).then(res => {
-                console.log(res);
-            }).catch(res => {
-                console.log(res);
-            });
+        // this.$http("album", "get", {
+        //     capacity: 16,
+        //     ordering: "-create_time",
+        //     category: "HH5",
+        //     page: 1,
+        //     lang: "en"
+        // }).then(res => {
+        //         console.log(res);
+        //     }).catch(res => {
+        //         console.log(res);
+        //     });
     }
 };
 </script>

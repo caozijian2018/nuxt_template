@@ -4,7 +4,9 @@
             <img class="width_100" src="../../static/img/python.png" alt="">
         </div>
         <div class="flex_1 margin_left_8">
-            <span :class="isWhite ? 'white' : ''">XXXXXXXXXXXXXXX</span>
+            <span :class="isWhite ? 'white' : ''">
+                <!--{{game.title}}-->
+            </span>
             <star :text-is-red="true"></star>
         </div>
     </div>
@@ -17,10 +19,13 @@ export default {
         isWhite: {
             type: Boolean,
             default: false
+        },
+        game: {
+            type: Array
         }
     },
     components: {
-       star 
+       star
     }
 }
 

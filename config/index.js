@@ -1,5 +1,4 @@
 var env = process.env.NODE_ENV
-console.log('wwwwwwwwwwww')
 console.log(env)
 
 if (env == 'prod') {

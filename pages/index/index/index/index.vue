@@ -8,22 +8,21 @@
                 <red-line class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1">
-                        <img src="../../../../static/img/python.png" class="width_100 margin_bottom_2" alt />
+                        <img src="../../../../static/img/python.png" class="width_100 margin_bottom_2" alt/>
                         <div class="font_size_2 margin_bottom_2 margin_top_20">GAME REVIEW</div>
                         <div>
                             <star :textIsRed="true"></star>
                         </div>
                         <div class="margin_top_20">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Nam necessitatibus similique dicta pariatur voluptate? Nihil,
-                            voluptate molestias distinctio quos nesciunt
-                            laboriosam vero alias deserunt?
+                            Adventure is the most liked game genre in My Game Party as it has one of longest traditions
+                            in digital games. Adventure games encourage insight thinking, which means the type of
+                            thinking that leads to new knowledge. Come and enjoy our adventure games NOW！
                         </div>
                     </div>
                     <div class="flex_1 margin_left_15 wrop phone_margin_top_20px phone_margin_left_0">
-                        <div v-for="i in 3" :key="i">
-                            <game-div></game-div>
-                            <div class="border_bottom margin_top_20 margin_bottom_2" v-if="i < 4"></div>
+                        <div v-for="item in adventure_game" :key="item">
+                            <game-div :game="item"></game-div>
+                            <div class="border_bottom margin_top_20 margin_bottom_2"></div>
                         </div>
                     </div>
                 </div>
@@ -45,102 +44,150 @@
             </div>
         </div>
         <div class="width_97 margin_auto margin_bottom_4">
-            <banner-big></banner-big>
+            <banner-big :banner_img="siteList.banner"></banner-big>
         </div>
     </div>
 </template>
 
 <script>
-import banner from "../../../../components/banner";
-import gameDiv from "../../../../components/game_div";
-import star from "../../../../components/star";
-import redLine from "../../../../components/red_line";
-import headDiv from "../../../../components/head_div";
-import gameDivTextBottom from "../../../../components/game_div_text_bottom";
-import gameTextBottomRow from "../../../../components/game_text_bottom_row";
-import bannerBig from "../../../../components/banner_big";
-import appFooter from "../../../../components/footer";
-export default {
-    layout: "us",
-    components: {
-        banner,
-        gameDiv,
-        star,
-        redLine,
-        headDiv,
-        gameDivTextBottom,
-        gameTextBottomRow,
-        bannerBig,
-        appFooter
-    },
-    data() {
-        return {
-            list: []
-        };
-    },
-    mounted(){
-        this.getList()
-    },
-    methods: {
-        getList(tag) {
-            this.$http("album/", "get", {
-                capacity: 16,
-                ordering: "-create_time",
-                category: "HH5",
-                page: 1,
-                tags: tag,
-                lang: "en"
-            }).then(res => {
-                console.log(res);
-            }).catch(res => {
-                console.log(res);
-            });
-        },
-        getSite() {
-            this.$http("site/", "get", {
-                capacity: 16,
-                ordering: "-create_time",
-                category: "HH5",
-                page: 1,
-                tags: tag,
-                lang: "en"
-            }).then(res => {
-                console.log(res);
-            }).catch(res => {
-                console.log(res);
-            });
-        },
-        clickOption(){
-            this.show_select = !this.show_select;
-            this.$store.commit("changeShowHover");
-        },
-        drawCloud(cxt){
-            cxt.save();
-            cxt.beginPath();
-            cxt.moveTo(0, 0);
+    import banner from "../../../../components/banner";
+    import gameDiv from "../../../../components/game_div";
+    import star from "../../../../components/star";
+    import redLine from "../../../../components/red_line";
+    import headDiv from "../../../../components/head_div";
+    import gameDivTextBottom from "../../../../components/game_div_text_bottom";
+    import gameTextBottomRow from "../../../../components/game_text_bottom_row";
+    import bannerBig from "../../../../components/banner_big";
+    import appFooter from "../../../../components/footer";
 
-            // cxt.bezierCurveTo(0, 20, 140, 20, 140, 0);
-            // // cxt.lineTo(140,50);
-            // cxt.lineTo(0,0);
-            // 画长方形
-            cxt.lineTo(140,0);
-            cxt.lineTo(140,10);
-            cxt.lineTo(0,10);
-            // cxt.moveTo(0, 0);
-            // cxt.bezierCurveTo(250, 300, 350, 550, 800, 390);
-            // cxt.lineTo(800,0);
-            // cxt.lineTo(0,0);
-            cxt.closePath();
-            var lineStyle = cxt.createLinearGradient(0, 50, 140, 0);
-            lineStyle.addColorStop(0, "#00AA58");
-            lineStyle.addColorStop(0.3, "#63AA7B");
-            lineStyle.addColorStop(1, "#04AA00");
-            cxt.fillStyle = lineStyle;
-            cxt.fill();
-            cxt.restore();
+    export default {
+        layout: "us",
+        components: {
+            banner,
+            gameDiv,
+            star,
+            redLine,
+            headDiv,
+            gameDivTextBottom,
+            gameTextBottomRow,
+            bannerBig,
+            appFooter
+        },
+        data() {
+            return {
+                list: {
+                    big: [],
+                    small: []
+                },
+                siteList: [],
+                tagList: [],
+                adventure_game: {
+                    big: [],
+                    other: []
+                },
+                strategy_game: {
+                    big: [],
+                    other: []
+                },
+                puzzle_game: {
+                    big: [],
+                    other: []
+                },
+                others_game: {
+                    big: [],
+                    other: []
+                },
+                a: "test"
+            };
+        },
+        mounted() {
+            this.getAdventure();
+            this.getAdventure(73);
+            this.getAdventure(74);
+            this.getAdventure(75);
+            this.getAdventure(76);
+            this.getSite();
+        },
+        methods: {
+            getSite() {
+                this.$http("dcb/site/16/", "get", {
+                    capacity: 999,
+                    page: 1,
+                    lang: "en"
+                }).then(res => {
+                    this.siteList = res;
+                    this.tagList = res.tags
+                }).catch(res => {
+                    console.log(res);
+                });
+            },
+            getList(tag, callback) {
+                this.$http("dcb/album/", "get", {
+                    capacity: 16,
+                    ordering: "-create_time",
+                    category: "HH5",
+                    page: 1,
+                    tags: tag,
+                    lang: "en"
+                }).then(res => {
+                    callback(res.results)
+                }).catch(res => {
+                    console.log(res);
+                });
+            },
+            getAdventure(tag) {
+                let res_data;
+                this.getList(tag, (res) => {
+                    res_data = res
+                });
+                if (tag === 73) {
+                    this.adventure_game.big = res_data.slice(0, 1);
+                    this.adventure_game.other = res_data.slice(1, 3);
+                } else if (tag === 74) {
+                    this.strategy_game.big = res_data.slice(0, 1);
+                    this.strategy_game.other = res_data.slice(1, 3);
+                } else if (tag === 75) {
+                    this.puzzle_game.big = res_data.slice(0, 1);
+                    this.puzzle_game.other = res_data.slice(1, 3);
+                } else if (tag === 76) {
+                    this.others_game.big = res_data.slice(0, 1);
+                    this.others_game.other = res_data.slice(1, 3);
+                } else {
+                    this.list.big = res_data.slice(0, 3);
+                    this.list.small = res_data.slice(3, 7);
+                }
+            },
+            clickOption() {
+                this.show_select = !this.show_select;
+                this.$store.commit("changeShowHover");
+            },
+            drawCloud(cxt) {
+                cxt.save();
+                cxt.beginPath();
+                cxt.moveTo(0, 0);
+
+                // cxt.bezierCurveTo(0, 20, 140, 20, 140, 0);
+                // // cxt.lineTo(140,50);
+                // cxt.lineTo(0,0);
+                // 画长方形
+                cxt.lineTo(140, 0);
+                cxt.lineTo(140, 10);
+                cxt.lineTo(0, 10);
+                // cxt.moveTo(0, 0);
+                // cxt.bezierCurveTo(250, 300, 350, 550, 800, 390);
+                // cxt.lineTo(800,0);
+                // cxt.lineTo(0,0);
+                cxt.closePath();
+                var lineStyle = cxt.createLinearGradient(0, 50, 140, 0);
+                lineStyle.addColorStop(0, "#00AA58");
+                lineStyle.addColorStop(0.3, "#63AA7B");
+                lineStyle.addColorStop(1, "#04AA00");
+                cxt.fillStyle = lineStyle;
+                cxt.fill();
+                cxt.restore();
+            }
         }
-    }
-};
+    };
 </script>
 <style lang='less'>
 </style>

@@ -8,10 +8,11 @@
         </div>
         <div class="div_nav phone_none">
             <div class="margin_auto head_div display_flex width_97 height_100">
-                <div  class="height_100 margin_right_3 position_relative white"  style="background: red; width:130px;">
-                    <span class="pcs">HOME</span>
-                </div>
-                <div v-for="item in head_title_arr" class="single_cate overflow_hidden margin_right_3 position_relative white" :key="item.id">
+                <!--<div  class="height_100 margin_right_3 position_relative white"  style="background: red; width:130px;">-->
+                    <!--<span class="pcs">HOME</span>-->
+                <!--</div>-->
+                <div v-for="item in head_title_arr" class="single_cate overflow_hidden margin_right_3 position_relative white"
+                     @click="goTag(item)" :key="item.id">
                     <!-- {{item.name}} -->
                     <div class="back_box width_100" :style="{background: item.color}"></div>
                     <span class="pcs">{{item.name}}</span>
@@ -40,11 +41,11 @@ export default {
         return {
             show_select: false,
             head_title_arr: [
-                {id:1,name:"HOME", color: "red"},
-                {id:2,name:"PUZZLE", color: "blue"},
-                {id:3,name:"STRATEGY", color: "green"},
-                {id:4,name:"ADVENTURE", color: "blue"},
-                {id:5,name:"OTHERS", color: "gray"}
+                {id:1,name:"HOME", color: "red", tag_id: undefined},
+                {id:2,name:"PUZZLE", color: "blue", tag_id: 73},
+                {id:3,name:"STRATEGY", color: "green", tag_id: 74},
+                {id:4,name:"ADVENTURE", color: "blue", tag_id: 75},
+                {id:5,name:"OTHERS", color: "gray", tag_id: 76}
             ]
         }
     },
@@ -58,6 +59,9 @@ export default {
         // this.drawCloud(context);
     },
     methods: {
+        goTag(tag) {
+
+        },
         clickOption(){
             this.show_select = !this.show_select;
             this.$store.commit("changeShowHover");

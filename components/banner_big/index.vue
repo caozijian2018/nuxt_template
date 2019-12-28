@@ -7,9 +7,9 @@
             :height="getBigBannerHeight+'px'"
             indicator-position="inside"
         >
-            <el-carousel-item v-for="item in 4" :key="item">
+            <el-carousel-item v-for="item in banner_img" :key="item">
                 <div>
-                    <img src="../../static/img/python.png" class="width_100" alt />
+                    <img :src="item.img_url" class="width_100" alt />
                     <div class="position_absolute desc_banner_box">
                         <div class="action_div text_center app_back_red white">ACTION</div>
                         <div class="font_size_20 margin_top_10 margin_bottom_10 font_weight_600">FRUIT</div>
@@ -30,6 +30,7 @@ export default {
     components: {
         star
     },
+    props:["banner_img"],
     data(){
         return {
 
@@ -50,7 +51,7 @@ export default {
                     this.$store.commit("changeBigBannerHeight", parseInt(this.$jquery(this.$jquery('.banner_big_box')[0]).css("width")) / 1.5 || innerWidth / 1.5 + "px");
                 })
             }
-            
+
         },
     }
 };

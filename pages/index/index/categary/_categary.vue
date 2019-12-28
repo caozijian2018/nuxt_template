@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="padding_bottom_30">
-        <app-footer></app-footer> 
+        <app-footer></app-footer>
     </div>
 </div>
 
@@ -36,10 +36,6 @@ import gameDivTextBottom from "../../../../components/game_div_text_bottom";
 import gameTextBottomRow from "../../../../components/game_text_bottom_row";
 import headDiv from "../../../../components/game_div";
 import appFooter from "../../../../components/footer";
-
-
-
-
 
 export default {
     layout: "banner",

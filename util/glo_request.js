@@ -7,9 +7,9 @@ var allRequest = (request_name, methods = "get", params = {}) => {
     for (var v of api_arr) {
         if (request_name.match(v)) {
             if (request_name.match(/album\/\d+/)) {
-                vnum = "v3";
+                vnum = "v1";
             } else {
-                vnum = "v2";
+                vnum = "v1";
             }
             break;
         }
