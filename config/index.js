@@ -9,7 +9,7 @@ if (env == 'prod') {
     BASE_URL = 'http://mygameparty.com'
     API_URL = 'http://mygameparty.com/backend/'
 }else {
-    BASE_URL = 'http://localhost:9000/'
+    BASE_URL = 'http://localhost:3032/'
     API_URL = 'http://mygameparty.com/backend/'
 }
 module.exports = {
