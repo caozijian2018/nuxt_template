@@ -14,8 +14,8 @@
             </div>
             <div class="flex_1 margin_left_38 phone_margin_left_0" style="margin-bottom: 20px">
                 <red-line class="margin_bottom_3" :lineText="top"></red-line>
-                <game-text-bottom-row></game-text-bottom-row>
-                <head-div v-for="i in 4" class="margin_top_20" :key="i"></head-div>
+                <!--<game-text-bottom-row></game-text-bottom-row>-->
+                <!--<head-div v-for="i in 4" class="margin_top_20" :key="i"></head-div>-->
 
                 <!--<red-line class="margin_bottom_3 margin_top_20"></red-line>-->
                 <!--<head-div v-for="i in 6" class="margin_bottom_15" :key="i"></head-div>-->
@@ -49,7 +49,7 @@ export default {
     },
     data() {
         return {
-            lineText: "hi",
+            lineText: "",
             top: "TOP",
             tag_id: null
         }
@@ -59,12 +59,13 @@ export default {
     },
     methods: {
         getTag() {
-            this.tag_id = this.$route.params.category;
-            if (this.tag_id === 73) {
+            this.tag_id = this.$route.params.categary;
+            console.log(this.$route.params.categary);
+            if (this.tag_id === "73") {
                 this.lineText = "ADVENTURE"
-            } else if (this.tag_id === 74) {
+            } else if (this.tag_id === "74") {
                 this.lineText = "STRATEGY"
-            } else if (this.tag_id === 75) {
+            } else if (this.tag_id === "75") {
                 this.lineText = "PUZZLE"
             } else {
                 this.lineText = "OTHERS"

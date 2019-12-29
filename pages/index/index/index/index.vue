@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="width_97 margin_top_4 margin_auto display_flex wrop flex_jusify_space">
-            <game-div class="width_24 phone_width_49" v-for="i in 4" :key="i"></game-div>
+            <game-div :game="i" class="width_24 phone_width_49" v-for="i in list.small" :key="i.id"></game-div>
         </div>
         <div class="width_97 margin_auto margin_top_3 phone_block margin_bottom_3 display_flex">
             <div class="flex_2">
-                <red-line class="margin_bottom_3"></red-line>
+                <red-line :lineText="lineText[0]" class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1">
                         <img src="../../../../static/img/python.png" class="width_100 margin_bottom_2" alt/>
@@ -20,27 +20,27 @@
                         </div>
                     </div>
                     <div class="flex_1 margin_left_15 wrop phone_margin_top_20px phone_margin_left_0">
-                        <div v-for="item in adventure_game" :key="item">
+                        <div v-for="item in adventure_game.other" :key="item.id">
                             <game-div :game="item"></game-div>
                             <div class="border_bottom margin_top_20 margin_bottom_2"></div>
                         </div>
                     </div>
                 </div>
-                <red-line class="margin_bottom_3"></red-line>
+                <red-line :lineText="lineText[1]" class="margin_bottom_3"></red-line>
                 <div>
-                    <head-div></head-div>
+                    <head-div :game="strategy_game.big[0]"></head-div>
                 </div>
 
                 <div class="display_flex flex_jusify_space margin_top_20">
-                    <game-div-text-bottom class="width_32" v-for="i in 3" :key="i"></game-div-text-bottom>
+                    <game-div-text-bottom :game="i" class="width_32" v-for="i in strategy_game.other" :key="i.id"></game-div-text-bottom>
                 </div>
             </div>
             <div class="flex_1 margin_left_38 phone_margin_left_0">
-                <red-line class="margin_bottom_3"></red-line>
-                <game-text-bottom-row class="margin_bottom_15"></game-text-bottom-row>
-                <game-div v-for="i in 3" class="margin_bottom_2" :key="i"></game-div>
-                <red-line class="margin_bottom_3"></red-line>
-                <game-div v-for="i in 3" class="margin_bottom_2" :key="i"></game-div>
+                <red-line :lineText="lineText[2]" class="margin_bottom_3"></red-line>
+                <game-text-bottom-row :game="puzzle_game.big[0]" class="margin_bottom_15"></game-text-bottom-row>
+                <game-div :game="k" v-for="k in puzzle_game.other" class="margin_bottom_2" :key="k.id"></game-div>
+                <red-line :lineText="lineText[3]" class="margin_bottom_3"></red-line>
+                <game-div :game="j" v-for="j in others_game.other" class="margin_bottom_2" :key="j.id"></game-div>
             </div>
         </div>
         <div class="width_97 margin_auto margin_bottom_4">
@@ -75,29 +75,369 @@
         },
         data() {
             return {
+                lineText: [
+                    "ADVENTURE",
+                    "STRATEGY",
+                    "PUZZLE",
+                    "OTHERS",
+                ],
                 list: {
-                    big: [],
-                    small: []
+                    big: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ],
+                    small: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ]
                 },
                 siteList: [],
                 tagList: [],
                 adventure_game: {
-                    big: [],
-                    other: []
+                    big: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ],
+                    other: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ]
                 },
                 strategy_game: {
-                    big: [],
-                    other: []
+                    big: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ],
+                    other: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ]
                 },
                 puzzle_game: {
-                    big: [],
-                    other: []
+                    big: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ],
+                    other: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ]
                 },
                 others_game: {
-                    big: [],
-                    other: []
-                },
-                a: "test"
+                    big: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ],
+                    other: [
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        },
+                        {
+                            id: 2250,
+                            title: "Honey They Froze Our Kids",
+                            desc: "",
+                            cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
+                            video_start: 0,
+                            video_end: 0,
+                            video_duration: "0",
+                            show_cnt: 578,
+                            created: "2019-12-28T17:35:32.973070",
+                            updated: "2019-12-28T17:36:03.922258",
+                            category: 18
+                        }
+                    ]
+                }
             };
         },
         mounted() {

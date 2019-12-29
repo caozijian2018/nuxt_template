@@ -12,7 +12,7 @@
                     <!--<span class="pcs">HOME</span>-->
                 <!--</div>-->
                 <div v-for="item in head_title_arr" class="single_cate overflow_hidden margin_right_3 position_relative white"
-                     @click="goTag(item)" :key="item.id">
+                     @click="goTag(item.tag_id)" :key="item.id">
                     <!-- {{item.name}} -->
                     <div class="back_box width_100" :style="{background: item.color}"></div>
                     <span class="pcs">{{item.name}}</span>
@@ -60,9 +60,15 @@ export default {
     },
     methods: {
         goTag(tag) {
-            this.$router.push({
-                path: '/categary/' + tag,
-            })
+            if (tag) {
+                this.$router.push({
+                    path: '/categary/' + tag,
+                })
+            } else {
+                this.$router.push({
+                    path: '/'
+                })
+            }
         },
         clickOption(){
             this.show_select = !this.show_select;

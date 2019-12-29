@@ -6,22 +6,22 @@
                     <div class="width_80 phone_width_100 phone_text_center">
                         <img src="../../static/img/logo.png" class="width_60" alt="">
                         <div class="white">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Alias repellendus ratione 
-                            distinctio magnam? Iure magni soluta atque blanditiis 
-                            rerum eum dolorum saepe eos magnam quo 
+                            Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Alias repellendus ratione
+                            distinctio magnam? Iure magni soluta atque blanditiis
+                            rerum eum dolorum saepe eos magnam quo
                             ipsam quaerat quos aliquam?
                         </div>
                     </div>
                 </div>
                 <div class="flex_1 phone_none">
                     <red-line class="margin_bottom_3" :is-white="true"></red-line>
-                    <game-div-text-right :is-white="true" class="margin_top_10 margin_bottom_10"></game-div-text-right>
-                    <game-div-text-right :is-white="true"></game-div-text-right>
+                    <!--<game-div-text-right :is-white="true" class="margin_top_10 margin_bottom_10"></game-div-text-right>-->
+                    <!--<game-div-text-right :is-white="true"></game-div-text-right>-->
                 </div>
                 <div class="flex_1 margin_left_8 phone_margin_left_0 phone_none">
                     <red-line class="margin_bottom_3" :is-white="true"></red-line>
-                    <game-div></game-div>
+                    <!--<game-div></game-div>-->
                 </div>
             </div>
         </div>

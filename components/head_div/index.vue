@@ -1,8 +1,8 @@
 <template>
-    <div class="position_relative head_game_div overflow_hidden">
-        <img src="../../static/img/python.png" class="width_100" alt="">
+    <div class="position_relative head_game_div overflow_hidden" @click="playGame">
+        <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
         <div class="position_absolute position">
-            <span :class="isWhite ? 'white' : ''" class="font_size_10">XXXXX1</span>
+            <span :class="isWhite ? 'white' : ''" class="font_size_10">{{game.title}}</span>
             <star></star>
         </div>
     </div>
@@ -15,10 +15,20 @@ export default {
         isWhite: {
             type: Boolean,
             default: false
+        },
+        game: {
+            type: Object
         }
     },
     components: {
         star
+    },
+    methods: {
+        playGame() {
+            this.$router.push({
+                path: '/play/' + this.game.id,
+            })
+        }
     }
 }
 

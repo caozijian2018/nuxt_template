@@ -1,10 +1,10 @@
 <template>
-    <div class="width_100 bottom_rowgame overflow_hidden">
+    <div class="width_100 bottom_rowgame overflow_hidden" @click="playGame">
         <div class="">
-            <img class="width_100" src="../../static/img/python.png" alt="">
+            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
         </div>
         <div class="margin_top_10 display_flex flex_jusify_space">
-            <span>XXXXXXXXXXXXXXX</span>
+            <span>{{game.title}}</span>
             <star :text-is-red="true"></star>
         </div>
     </div>
@@ -14,7 +14,15 @@
 import star from "../../components/star"
 export default {
     components: {
-       star 
+       star
+    },
+    props: ["game"],
+    methods: {
+        playGame() {
+            this.$router.push({
+                path: '/play/' + this.game.id,
+            })
+        }
     }
 }
 
