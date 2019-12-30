@@ -1,6 +1,8 @@
 <template>
     <div class="position_relative head_game_div overflow_hidden" @click="playGame">
-        <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
+        <div class="yuan">
+            <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
+        </div>
         <div class="position_absolute position">
             <span :class="isWhite ? 'white' : ''" class="font_size_10">{{game.title}}</span>
             <star></star>

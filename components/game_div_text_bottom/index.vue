@@ -1,6 +1,6 @@
 <template>
     <div class="rowgame overflow_hidden" @click="playGame">
-        <div class="">
+        <div class="yuan">
             <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
         </div>
         <div class="margin_top_10">

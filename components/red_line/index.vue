@@ -16,8 +16,12 @@ export default {
             default: false
         },
         lineText:{
-            type: String,
-            default: "HELLO"
+            type: String
+        }
+    },
+    watch: {
+        lineText(v) {
+            console.log(v)
         }
     }
 };

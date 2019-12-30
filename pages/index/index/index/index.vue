@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="width_97 margin_auto margin_bottom_4">
-            <banner-big :banner_img="siteList.banner"></banner-big>
+            <banner-big :banner_img="siteList"></banner-big>
         </div>
     </div>
 </template>
@@ -455,7 +455,7 @@
                     page: 1,
                     lang: "en"
                 }).then(res => {
-                    this.siteList = res;
+                    this.siteList = res.banner.slice(4);
                     this.tagList = res.tags
                 }).catch(res => {
                     console.log(res);
@@ -463,17 +463,15 @@
             },
             getList(tag, callback) {
                 this.$http("dcb/album/", "get", {
-                    capacity: 16,
-                    ordering: "-create_time",
+                    capacity: 999,
+                    ordering: "-show_cnt",
                     category: "HH5",
                     page: 1,
                     tags: tag,
                     lang: "en"
                 }).then(res => {
                     callback(res.results)
-                }).catch(res => {
-                    console.log(res);
-                });
+                }).catch(res => {});
             },
             getAdventure(tag) {
                 let res_data;
