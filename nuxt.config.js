@@ -91,8 +91,18 @@ export default {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {},
-        publicPath: 'https://cdn.nuxtjs.org'
+        extend (config, { isDev, isClient }) {
+            if (isDev && isClient) {
+                config.module.rules.push({
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    exclude: /(node_modules)/
+                })
+            }
+        },
+        publicPath: 'https://cdn.nuxtjs.org/',
+
     }
 };
 // const { BASE_URL, API_URL } = require('./config/index')
@@ -139,7 +149,7 @@ export default {
 //     ** Build configuration
 //     */
 //     css:[
-//         "./assets/css/global_css.css"
+//         "./assets/css/glo.css"
 //     ],
 //     proxy: {
 //         '/backend': {
@@ -165,7 +175,7 @@ export default {
 //         {src:  '~/plugins/element_ui.js',ssr:true},
 //         { src: '~plugins/axios.js', ssr: true },
 //         { src: '~plugins/i18n.js' },
-//         { src: '~plugins/vue-video-player.js',ssr:false},
+//         // { src: '~plugins/vue-video-player.js',ssr:false},
 //         // { src: '~plugins/iscroll.js', ssr: true },
 //     ],
 //     build: {
