@@ -58,7 +58,7 @@
         methods: {
             goTag(tag, name) {
                 if (tag) {
-                    // bus.$emit("changeTag", {tag: tag,name: name});
+                    bus.$emit("changeTag", {tag: tag,name: name});
                     this.$router.push({
                         path: '/categary/' + tag,
                         query: {
