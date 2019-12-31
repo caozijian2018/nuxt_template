@@ -100,8 +100,8 @@ export default {
                     exclude: /(node_modules)/
                 })
             }
-        },
-        publicPath: 'https://cdn.nuxtjs.org'
+        }
+        // publicPath: 'https://cdn.nuxtjs.org'
     }
 };
 // const { BASE_URL, API_URL } = require('./config/index')
