@@ -1,44 +1,32 @@
 {
-    "name": "caoyao",
-    "version": "1.0.0",
-    "description": "ceshi",
-    "author": "caoyao",
-    "private": true,
-    "config": {
-        "nuxt": {
-            "host": "0.0.0.0",
-            "port": "3032"
-        }
-    },
-    "scripts": {
-        "dev": "NODE_ENV=dev nuxt",
-        "build": "NODE_ENV=prod nuxt build",
-        "build_dev_online": "NODE_ENV=dev_online nuxt build",
-        "start": "nuxt start",
-        "generate": "nuxt generate"
-    },
-    "dependencies": {
-        "@nuxtjs/axios": "^5.3.6",
-        "@nuxtjs/component-cache": "^1.1.5",
-        "ant-design-vue": "^1.1.10",
-        "element-ui": "^2.13.0",
-        "jquery": "^3.4.1",
-        "less": "^3.10.3",
-        "less-loader": "^5.0.0",
-        "nuxt": "^2.0.0",
-        "vue-i18n": "^8.15.1",
-        "vue-video-player": "^5.0.2"
-    },
-    "devDependencies": {
-        "babel-eslint": "^8.2.1",
-        "eslint": "^4.15.0",
-        "eslint-friendly-formatter": "^3.0.0",
-        "eslint-loader": "^1.7.1",
-        "eslint-plugin-vue": "^4.0.0",
-        "iscroll": "^5.2.0",
-        "postcss-hexrgba": "^1.0.1",
-        "postcss-nested": "^3.0.0",
-        "postcss-responsive-type": "^1.0.0",
-        "vue-iscroll-view": "^1.0.3"
+  "name": "caoyao",
+  "version": "1.0.0",
+  "description": "ceshi",
+  "author": "caoyao",
+  "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3032"
     }
+  },
+  "scripts": {
+    "dev": "NODE_ENV=dev nuxt",
+    "build": "NODE_ENV=prod nuxt build",
+    "build_dev_online": "NODE_ENV=dev_online nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/component-cache": "^1.1.5",
+    "ant-design-vue": "^1.1.10",
+    "element-ui": "^2.13.0",
+    "jquery": "^3.4.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "nuxt": "^2.0.0",
+    "vue-i18n": "^8.15.1"
+  },
+  "devDependencies": {}
 }
