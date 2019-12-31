@@ -98,6 +98,7 @@
         },
         mounted() {
             this.setHeight();
+            this.getGame();
         },
         methods: {
             setHeight() {
@@ -127,7 +128,8 @@
                     page: 1,
                     lang: "en"
                 }).then(res => {
-                    this.list = res.results.slice(0, 3)
+                    this.list = res.results.slice(0, 4);
+                    console.log(this.list)
                 }).catch(res => {});
             }
         }

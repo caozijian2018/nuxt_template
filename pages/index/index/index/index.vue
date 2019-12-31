@@ -7,8 +7,8 @@
             <div class="flex_2">
                 <red-line :lineText="lineText[0]" class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
-                    <div class="flex_1">
-                        <img src="../../../../static/img/python.png" class="width_100 margin_bottom_2" alt/>
+                    <div class="flex_1" @click="playGame">
+                        <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" class="width_100 margin_bottom_2" alt/>
                         <div class="font_size_2 margin_bottom_2 margin_top_20">GAME REVIEW</div>
                         <div>
                             <star :textIsRed="true"></star>
@@ -38,7 +38,7 @@
             <div class="flex_1 margin_left_38 phone_margin_left_0">
                 <red-line :lineText="lineText[2]" class="margin_bottom_3"></red-line>
                 <game-text-bottom-row :game="puzzle_game.big[0]" class="margin_bottom_15"></game-text-bottom-row>
-                <game-div :game="k" v-for="k in puzzle_game.other" class="margin_bottom_2" :key="k.id"></game-div>
+                <game-div :game="k" v-for="(k, index) in puzzle_game.other" class="margin_bottom_2" :key="k.id"></game-div>
                 <red-line :lineText="lineText[3]" class="margin_bottom_3"></red-line>
                 <game-div :game="j" v-for="j in others_game.other" class="margin_bottom_2" :key="j.id"></game-div>
             </div>
@@ -442,10 +442,10 @@
         },
         mounted() {
             this.getAdventure();
-            // this.getAdventure(73);
-            // this.getAdventure(74);
-            // this.getAdventure(75);
-            // this.getAdventure(76);
+            this.getAdventure(73);
+            this.getAdventure(74);
+            this.getAdventure(75);
+            this.getAdventure(76);
             this.getSite();
         },
         methods: {
@@ -476,24 +476,32 @@
             getAdventure(tag) {
                 let res_data;
                 this.getList(tag, (res) => {
-                    res_data = res
+                    res_data = res;
+                    if (res_data.length > 0) {
+                        if (tag === 73) {
+                            this.adventure_game.big = res_data.slice(0, 1);
+                            this.adventure_game.other = res_data.slice(1, 4);
+                            console.log(this.adventure_game);
+                        } else if (tag === 74) {
+                            this.strategy_game.big = res_data.slice(0, 1);
+                            this.strategy_game.other = res_data.slice(1, 4);
+                        } else if (tag === 75) {
+                            this.puzzle_game.big = res_data.slice(0, 1);
+                            this.puzzle_game.other = res_data.slice(1, 4);
+                        } else if (tag === 76) {
+                            this.others_game.big = res_data.slice(0, 1);
+                            this.others_game.other = res_data.slice(0, 4);
+                        } else {
+                            this.list.big = res_data.slice(0, 4);
+                            this.list.small = res_data.slice(4, 8);
+                        }
+                    }
                 });
-                if (tag === 73) {
-                    this.adventure_game.big = res_data.slice(0, 1);
-                    this.adventure_game.other = res_data.slice(1, 3);
-                } else if (tag === 74) {
-                    this.strategy_game.big = res_data.slice(0, 1);
-                    this.strategy_game.other = res_data.slice(1, 3);
-                } else if (tag === 75) {
-                    this.puzzle_game.big = res_data.slice(0, 1);
-                    this.puzzle_game.other = res_data.slice(1, 3);
-                } else if (tag === 76) {
-                    this.others_game.big = res_data.slice(0, 1);
-                    this.others_game.other = res_data.slice(1, 3);
-                } else {
-                    // this.list.big = res_data.slice(0, 3);
-                    // this.list.small = res_data.slice(3, 7);
-                }
+            },
+            playGame() {
+                this.$router.push({
+                    path: '/play/' + this.adventure_game.big[0].id,
+                })
             },
             clickOption() {
                 this.show_select = !this.show_select;
