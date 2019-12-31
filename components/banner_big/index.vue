@@ -8,7 +8,7 @@
             indicator-position="inside"
         >
             <el-carousel-item v-for="item in banner_img" :key="item">
-                <div>
+                <div @click="playGame(item)">
                     <img :src="item.img_url" class="width_100" alt />
                     <div class="position_absolute desc_banner_box">
                         <div class="action_div text_center app_back_red white">ACTION</div>
@@ -43,6 +43,11 @@ export default {
         this.setHeight()
     },
     methods:{
+        playGame(data) {
+            this.$router.push({
+                path: '/play/' + data.jump_url,
+            })
+        },
         setHeight() {
             if(this.$store.getters.getBigBannerHeight){
                 // console.log(this.$store.getters.getBannerHeight);

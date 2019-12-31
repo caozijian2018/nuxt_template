@@ -4,7 +4,7 @@
             <el-carousel class="flex_1 banner_box" arrow="always" :interval="900000" :height="getBannerHeight+'px'"
                          indicator-position="inside">
                 <el-carousel-item v-for="item in bannerList" :key="item">
-                    <div>
+                    <div @click="playGame(item)">
                         <img :src="item.img_url" class="width_100" alt="">
                         <div class="position_absolute desc_banner_box">
                             <div class="action_div text_center app_back_red white">ACTION</div>
@@ -90,7 +90,15 @@
                         category: 18
                     }
                 ],
-                bannerList: []
+                bannerList: [
+                    {
+                        title: "banner1",
+                        img_url: "http://assets.mygameparty.com/DCB/HH5/The Cube/cover/7e511a32295111ea9c4c0ab313eb377e.png",
+                        jump_url: "2248",
+                        is_floating: false,
+                        country: "GLOBAL"
+                    }
+                ]
             }
         },
         computed: {
@@ -101,6 +109,11 @@
             this.getGame();
         },
         methods: {
+            playGame(data) {
+                this.$router.push({
+                    path: '/play/' + data.jump_url,
+                })
+            },
             setHeight() {
                 if (this.$store.getters.getBannerHeight) {
                     // console.log(this.$store.getters.getBannerHeight);
@@ -118,6 +131,7 @@
                     lang: "en"
                 }).then(res => {
                     this.bannerList = res.banner.slice(0, 3);
+                    console.log(this.bannerList)
                 }).catch(res => {
                     console.log(res);
                 });
@@ -129,7 +143,6 @@
                     lang: "en"
                 }).then(res => {
                     this.list = res.results.slice(0, 4);
-                    console.log(this.list)
                 }).catch(res => {});
             }
         }

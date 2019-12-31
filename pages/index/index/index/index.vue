@@ -84,7 +84,7 @@
                 list: {
                     big: [
                         {
-                            id: 2250,
+                            id: 1,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -97,7 +97,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 2,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -110,7 +110,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 3,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -123,7 +123,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 4,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -138,7 +138,7 @@
                     ],
                     small: [
                         {
-                            id: 2250,
+                            id: 5,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -151,7 +151,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 6,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -164,7 +164,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 7,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -177,7 +177,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 8,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -196,7 +196,7 @@
                 adventure_game: {
                     big: [
                         {
-                            id: 2250,
+                            id: 1,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -211,7 +211,7 @@
                     ],
                     other: [
                         {
-                            id: 2250,
+                            id: 2,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -224,7 +224,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 3,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -237,7 +237,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 4,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -254,7 +254,7 @@
                 strategy_game: {
                     big: [
                         {
-                            id: 2250,
+                            id: 1,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -269,7 +269,7 @@
                     ],
                     other: [
                         {
-                            id: 2250,
+                            id: 2,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -282,7 +282,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 3,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -295,7 +295,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 4,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -312,7 +312,7 @@
                 puzzle_game: {
                     big: [
                         {
-                            id: 2250,
+                            id: 1,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -327,7 +327,7 @@
                     ],
                     other: [
                         {
-                            id: 2250,
+                            id: 2,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -340,7 +340,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 3,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -353,7 +353,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 4,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -370,7 +370,7 @@
                 others_game: {
                     big: [
                         {
-                            id: 2250,
+                            id: 1,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -385,7 +385,7 @@
                     ],
                     other: [
                         {
-                            id: 2250,
+                            id: 2,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -398,7 +398,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 3,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -411,7 +411,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 4,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -424,7 +424,7 @@
                             category: 18
                         },
                         {
-                            id: 2250,
+                            id: 5,
                             title: "Honey They Froze Our Kids",
                             desc: "",
                             cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -455,7 +455,7 @@
                     page: 1,
                     lang: "en"
                 }).then(res => {
-                    this.siteList = res.banner.slice(4);
+                    this.siteList = res.banner.slice(3);
                     this.tagList = res.tags
                 }).catch(res => {
                     console.log(res);
