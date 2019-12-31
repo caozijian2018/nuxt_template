@@ -91,16 +91,7 @@ export default {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {
-            if (isDev && isClient) {
-                config.module.rules.push({
-                    enforce: 'pre',
-                    test: /\.(js|vue)$/,
-                    loader: 'eslint-loader',
-                    exclude: /(node_modules)/
-                })
-            }
-        },
+        extend(config, ctx) {},
         publicPath: 'https://cdn.nuxtjs.org'
     }
 };
