@@ -7,7 +7,7 @@
             :height="getBigBannerHeight+'px'"
             indicator-position="inside"
         >
-            <el-carousel-item v-for="item in banner_img" :key="item">
+            <el-carousel-item v-for="item in banner_img" :key="item.jump_url">
                 <div @click="playGame(item)">
                     <img :src="item.img_url" class="width_100" alt />
                     <div class="position_absolute desc_banner_box">

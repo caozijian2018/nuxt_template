@@ -3,7 +3,7 @@
         <div class="display_flex width_97 phone_block margin_auto ">
             <el-carousel class="flex_1 banner_box" arrow="always" :interval="900000" :height="getBannerHeight+'px'"
                          indicator-position="inside">
-                <el-carousel-item v-for="item in bannerList" :key="item">
+                <el-carousel-item v-for="item in bannerList" :key="item.jump_url">
                     <div @click="playGame(item)">
                         <img :src="item.img_url" class="width_100" alt="">
                         <div class="position_absolute desc_banner_box">
@@ -38,7 +38,7 @@
             return {
                 list: [
                     {
-                        id: 2250,
+                        id: 1,
                         title: "Honey They Froze Our Kids",
                         desc: "",
                         cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -51,7 +51,7 @@
                         category: 18
                     },
                     {
-                        id: 2250,
+                        id: 2,
                         title: "Honey They Froze Our Kids",
                         desc: "",
                         cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -64,7 +64,7 @@
                         category: 18
                     },
                     {
-                        id: 2250,
+                        id: 3,
                         title: "Honey They Froze Our Kids",
                         desc: "",
                         cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
@@ -77,7 +77,7 @@
                         category: 18
                     },
                     {
-                        id: 2250,
+                        id: 4,
                         title: "Honey They Froze Our Kids",
                         desc: "",
                         cover: "DCB/HH5/Honey They Froze Our Kids/cover/64c7a514295511ea93100ab313eb377e.png",
