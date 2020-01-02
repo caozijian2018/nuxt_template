@@ -81,7 +81,7 @@
             },
             clickOption() {
                 this.show_select = !this.show_select;
-                this.$store.commit("changeShowHover");
+                this.$store.commit("changeShowHover", this.show_select);
             },
             drawCloud(cxt) {
                 cxt.save();

@@ -38,7 +38,7 @@ export const mutations = {
     },
     
     changeShowHover(state, v) {
-            state.show_hover = !state.show_hover;
+            state.show_hover = v;
     },
     increment(state) {
         state.counter++;
