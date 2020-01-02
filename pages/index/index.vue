@@ -1,5 +1,6 @@
 <template>
-    <div class="dark display_flex flex_column height_100">
+<div class="out_box">
+    <div class="dark display_flex flex_column height_100 width_80 margin_auto">
         <app-head></app-head>
         <div
             class="flex_1 child_box overflow_scroll scroll_box"
@@ -7,6 +8,8 @@
             <nuxt-child></nuxt-child>
         </div>
     </div>
+</div>
+
 </template>
 
 <script>
@@ -87,7 +90,12 @@ export default {
 </script>
 <style lang="less">
 @import "../../assets/css/them.less";
-.child_box{
-    .app_back_yellow;
+.out_box{
+    background: url("../../static/img/back1.jpg");
+    background-size: 150%;
+    .child_box{
+        .app_back_yellow;
+    }
 }
+
 </style>
