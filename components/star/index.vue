@@ -1,7 +1,7 @@
 <template>
     <div class="flex_align_center">
         <span class="font_size_10" :class="textIsRed ? 'app_color_red': 'app_color_red'">10.0</span>
-        <i class="iconfont icon-hongxing app_color_red" v-for="i in 4" :key="i"></i>
+        <i class="iconfont icon-hongxing  app_color_red" style="font-size: 13px"  v-for="i in 4" :key="i"></i>
     </div>
 </template>
 

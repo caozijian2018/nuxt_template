@@ -3,7 +3,7 @@
     <div class="dark display_flex flex_column height_100 width_80 phone_width_100 margin_auto">
         <app-head></app-head>
         <div
-            class="flex_1 child_box overflow_scroll scroll_box"
+            class="flex_1 child_box nscrol overflow_scroll scroll_box"
         >
             <nuxt-child></nuxt-child>
         </div>

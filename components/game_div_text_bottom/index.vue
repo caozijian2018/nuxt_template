@@ -4,7 +4,7 @@
             <img class="width_100 xxx" :src="'http://assets.mygameparty.com/' + game.cover" alt />
         </div>
         <div class="margin_top_10 white">
-            <span>{{game.title}}</span>
+            <span class="font_size_10">{{game.title}}</span>
             <star :text-is-red="true"></star>
         </div>
     </div>

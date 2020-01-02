@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="app_heahder phone_none">
-            <div class="width_90 display_flex flex_jusify_space margin_auto height_100">
+            <div class="width_97 display_flex flex_jusify_space margin_auto  height_100">
                 <img src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
-                <div class="width_80">
+                <div class="width_80 height_100 display_flex flex_align_center">
                     <img src="../../static/img/head_logo_right.jpg" class="width_100" style="height: 50px" alt="">
                 </div>
             </div>
@@ -50,11 +50,11 @@
                 show_select: false,
                 selected_name: "",
                 head_title_arr: [
-                    {id: 1, name: "HOME", color: "red", tag_id: undefined},
-                    {id: 2, name: "ADVENTURE", color: "blue", tag_id: 73},
-                    {id: 3, name: "STRATEGY", color: "green", tag_id: 74},
-                    {id: 4, name: "PUZZLE", color: "blue", tag_id: 75},
-                    {id: 5, name: "OTHERS", color: "gray", tag_id: 76}
+                    {id: 1, name: "HOME", color: "#DA411F", tag_id: undefined},
+                    {id: 2, name: "ADVENTURE", color: "#50C1E9", tag_id: 73},
+                    {id: 3, name: "STRATEGY", color: "#D65F00", tag_id: 74},
+                    {id: 4, name: "PUZZLE", color: "#1F6ED4", tag_id: 75},
+                    {id: 5, name: "OTHERS", color: "#79bd9a", tag_id: 76}
                 ]
             }
         },
@@ -155,7 +155,7 @@
 
     @width: 140px;
     .app_heahder {
-        height: 50px;
+        height: 74px;
         background: @yellow;
         padding: 20px 0;
         box-sizing: content-box;

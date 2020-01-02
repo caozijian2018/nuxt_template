@@ -230,6 +230,9 @@ html {
 .width_15 {
     width: 15%;
 }
+.width_12 {
+    width: 12%;
+}
 
 .height_100 {
     height: 100%;
@@ -333,9 +336,11 @@ html {
 .font_size_9 {
     font-size: 1.9rem;
 }
-
+.font_size_10{
+    font-size: 14px;
+}
 .font_size_15 {
-    font-size: 1.5rem;
+    font-size: 20px;
 }
 
 .font_size_20 {
@@ -389,7 +394,7 @@ html {
     margin-left: 8px;
 }
 .border_bottom {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #4f4f4f;
 }
 .margin_left_3 {
     margin-left: 0.3rem;
@@ -448,7 +453,9 @@ html {
 .flex_center {
     justify-content: center;
 }
-
+.width_20{
+    width: 20%;
+}
 .margin_right_20 {
     margin-right: 2rem;
 }
@@ -805,6 +812,6 @@ html {
 }
 
 .border_radius_20px {
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 }
