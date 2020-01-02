@@ -4,12 +4,20 @@ export const state = () => ({
     banner_height: 0,
     big_banner_height: 0,
     is_pc: false,
-    show_hover: false
+    show_hover: false,
+    row_game_div_height: 0,
+    head_div_height: 0
 
 });
 export const getters = {
+    getHeadDivHeight(){
+        return state.head_div_height;
+    },
     getBannerHeight(state) {
         return state.banner_height;
+    },
+    getRowGameDivHeight(state) {
+        return state.row_game_div_height;
     },
     getBigBannerHeight(state) {
         return state.big_banner_height;
@@ -22,8 +30,15 @@ export const getters = {
     },
 }
 export const mutations = {
-    changeShowHover(state) {
-        state.show_hover = !state.show_hover;
+    changeHeadDivHeight(state, head_div_height) {
+        state.head_div_height = head_div_height;
+    },
+    changeRowGameDivHeight(state, row_game_div_height) {
+        state.row_game_div_height = row_game_div_height;
+    },
+    
+    changeShowHover(state, v) {
+            state.show_hover = !state.show_hover;
     },
     increment(state) {
         state.counter++;

@@ -1,11 +1,11 @@
 <template>
     <div id="banner_big_box">
         <div class="display_flex width_97 phone_block margin_auto ">
-            <el-carousel class="flex_1 banner_box" arrow="always" :interval="900000" :height="getBannerHeight+'px'"
+            <el-carousel class="flex_1 banner_box" arrow="always" :interval="9000" :height="getBannerHeight+'px'"
                          indicator-position="inside">
                 <el-carousel-item v-for="item in bannerList" :key="item.jump_url">
                     <div @click="playGame(item)">
-                        <img :src="item.img_url" class="width_100" alt="">
+                        <img :src="item.img_url" class="width_100 border_radius_20px" alt="">
                         <div class="position_absolute desc_banner_box">
                             <div class="action_div text_center app_back_red white">PLAY</div>
                             <div class="font_size_15  font_weight_600">

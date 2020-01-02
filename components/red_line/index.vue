@@ -3,7 +3,7 @@
         <div class="display_flex">
             <!-- 红色的线条 -->
             <div class="red_line margin_right_7px"></div>
-            <span class="font_size_15" :class="{'white': isWhite}">{{lineText}}</span>
+            <span class="font_size_15 white">{{lineText}}</span>
         </div>
     </div>
 </template>

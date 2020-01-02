@@ -1,9 +1,9 @@
 <template>
     <div class="rowgame overflow_hidden" @click="playGame">
-        <div class="yuan">
-            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
+        <div class="border_radius_20px">
+            <img class="width_100 xxx" :src="'http://assets.mygameparty.com/' + game.cover" alt />
         </div>
-        <div class="margin_top_10">
+        <div class="margin_top_10 white">
             <span>{{game.title}}</span>
             <star :text-is-red="true"></star>
         </div>
@@ -11,32 +11,45 @@
 </template>
 
 <script>
-import star from "../../components/star"
+import star from "../../components/star";
 export default {
     components: {
-       star
+        star
     },
     props: ["game"],
+    data(){
+        return {
+
+        }
+    },
+    mounted(){
+        // this.setWidthandHeight();
+    },
     methods: {
         playGame() {
             this.$router.push({
-                path: '/play/' + this.game.id,
-            })
+                path: "/play/" + this.game.id
+            });
+        },
+        setWidthandHeight() {
+            if(!this.$store.getters.getRowGameDivHeight){
+                var boxwidth = this.$jquery(".rowgame")[1].offsetWidth;
+                var boxheight = boxwidth / 1.2;
+                this.$store.commit("changeRowGameDivHeight", boxheight);
+            }
         }
     }
-}
-
+};
 </script>
 <style lang='less'>
-.rowgame{
-    img{
-        transition-duration: .5s;
+.rowgame {
+    img {
+        transition-duration: 0.5s;
     }
-    &:hover{
-        img{
-            transform: scale(1.5)
+    &:hover {
+        img {
+            transform: scale(1.5);
         }
     }
 }
-
 </style>

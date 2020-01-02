@@ -1,10 +1,10 @@
 <template>
     <div class="display_flex width_100 phone_block gamedi " @click="playGame">
-        <div class="flex_1 overflow_hidden yuan" style="background-color: white">
+        <div class="flex_1 overflow_hidden border_radius_20px" style="background-color: white">
             <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
         </div>
-        <div class="flex_1 margin_left_8">
-            <span :class="isWhite ? 'white' : ''">
+        <div class="flex_1 font_size_15 margin_left_8">
+            <span class="white">
                 {{game.title}}
             </span>
             <star :text-is-red="true"></star>

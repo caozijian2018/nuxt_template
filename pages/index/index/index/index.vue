@@ -9,11 +9,11 @@
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1" @click="playGame">
                         <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" class="width_100 margin_bottom_2" alt/>
-                        <div class="font_size_2 margin_bottom_2 margin_top_20">GAME REVIEW</div>
+                        <div class="font_size_2 margin_bottom_2 margin_top_20 white">GAME REVIEW</div>
                         <div>
                             <star :textIsRed="true"></star>
                         </div>
-                        <div class="margin_top_20">
+                        <div class="margin_top_20 font_size_16 white">
                             Adventure is the most liked game genre in My Game Party as it has one of longest traditions
                             in digital games. Adventure games encourage insight thinking, which means the type of
                             thinking that leads to new knowledge. Come and enjoy our adventure games NOW！

@@ -3,7 +3,9 @@
         <div class="app_heahder phone_none">
             <div class="width_90 display_flex flex_jusify_space margin_auto height_100">
                 <img src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
-                <img src="../../static/img/head_logo_right.jpg" class="width_80" alt="">
+                <div class="width_80">
+                    <img src="../../static/img/head_logo_right.jpg" class="width_100" style="height: 50px" alt="">
+                </div>
             </div>
         </div>
         <div class="div_nav phone_none">
@@ -12,11 +14,12 @@
                 <!--<span class="pcs">HOME</span>-->
                 <!--</div>-->
                 <div v-for="item in head_title_arr"
+                    :class="{'selected': selected_name == item.name}"
                      class="single_cate overflow_hidden margin_right_3 position_relative white"
                      @click="goTag(item.tag_id, item.name)" :key="item.id">
                     <!-- {{item.name}} -->
                     <div class="back_box width_100" :style="{background: item.color}"></div>
-                    <span class="pcs">{{item.name}}</span>
+                    <span class="pcs white">{{item.name}}</span>
                 </div>
             </div>
         </div>
@@ -31,7 +34,7 @@
         </div>
         <div :class="{'show_select': show_select}"
              class="cate_list_box width_100 cate_div_select z_index11 font_size_15 position_absolute phone_show">
-            <div v-for="item in head_title_arr" :key="item.id" class="cate_little_div">
+            <div v-for="item in head_title_arr"  @click="goTag(item.tag_id, item.name)" :key="item.id" class="cate_little_div">
                 {{item.name}}
             </div>
         </div>
@@ -45,6 +48,7 @@
         data() {
             return {
                 show_select: false,
+                selected_name: "",
                 head_title_arr: [
                     {id: 1, name: "HOME", color: "red", tag_id: undefined},
                     {id: 2, name: "ADVENTURE", color: "blue", tag_id: 73},
@@ -57,6 +61,10 @@
         mounted() {},
         methods: {
             goTag(tag, name) {
+                // console.log(tag)
+                this.selected_name = name
+                this.show_select = false;
+                this.$store.commit("changeShowHover", false);
                 if (tag) {
                     bus.$emit("changeTag", {tag: tag,name: name});
                     this.$router.push({
@@ -173,7 +181,7 @@
                     // transition-property: height;
                     transition-duration: .4s;
                 }
-                &:hover {
+                &:hover, &.selected {
                     .back_box {
                         height: 100%;
                         border-bottom-right-radius: @width/2;

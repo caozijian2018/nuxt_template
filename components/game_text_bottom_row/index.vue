@@ -1,9 +1,9 @@
 <template>
     <div class="width_100 bottom_rowgame overflow_hidden" @click="playGame">
-        <div class="yuan">
+        <div class="border_radius_20px">
             <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
         </div>
-        <div class="margin_top_10 display_flex flex_jusify_space">
+        <div class="margin_top_10 white display_flex flex_jusify_space">
             <span>{{game.title}}</span>
             <star :text-is-red="true"></star>
         </div>

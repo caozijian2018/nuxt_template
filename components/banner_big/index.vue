@@ -9,7 +9,7 @@
         >
             <el-carousel-item v-for="item in banner_img" :key="item.jump_url">
                 <div @click="playGame(item)">
-                    <img :src="item.img_url" class="width_100" alt />
+                    <img :src="item.img_url" class="width_100 border_radius_20px" alt />
                     <div class="position_absolute desc_banner_box">
                         <div class="action_div text_center app_back_red white">PLAY</div>
                         <div class="font_size_20 margin_top_10 margin_bottom_10 font_weight_600">FRUIT</div>

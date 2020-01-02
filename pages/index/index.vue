@@ -1,6 +1,6 @@
 <template>
-<div class="out_box">
-    <div class="dark display_flex flex_column height_100 width_80 margin_auto">
+<div class="out_box height_100">
+    <div class="dark display_flex flex_column height_100 width_80 phone_width_100 margin_auto">
         <app-head></app-head>
         <div
             class="flex_1 child_box overflow_scroll scroll_box"
@@ -92,7 +92,7 @@ export default {
 @import "../../assets/css/them.less";
 .out_box{
     background: url("../../static/img/back1.jpg");
-    background-size: 150%;
+    background-size: 120%;
     .child_box{
         .app_back_yellow;
     }

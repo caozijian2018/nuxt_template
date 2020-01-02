@@ -1,10 +1,10 @@
 <template>
-    <div class="headDiv position_relative head_game_div overflow_hidden" @click="playGame">
+    <div class="headDiv position_relative head_game_div overflow_hidden"  @click="playGame">
         <div class="">
-            <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
+            <img :src="'http://assets.mygameparty.com/' + game.cover" class="border_radius_20px width_100" alt="">
         </div>
         <div class="position_absolute position">
-            <span :class="isWhite ? 'white' : ''" class="font_size_10">{{game.title}}</span>
+            <span class="white font_size_15">{{game.title}}</span>
             <star></star>
         </div>
     </div>
@@ -26,6 +26,13 @@ export default {
         star
     },
     methods: {
+        setWidthandHeight() {
+            if(!this.$store.getters.getHeadDivHeight){
+                var boxwidth = this.$jquery(".headDiv")[1].offsetWidth;
+                var boxheight = boxwidth / 1.2;
+                this.$store.commit("changeHeadDivHeight", boxheight);
+            }
+        },
         playGame() {
             this.$router.push({
                 path: '/play/' + this.game.id,
@@ -37,11 +44,9 @@ export default {
 </script>
 <style lang='less'>
     .headDiv {
-        width: 300px;
-        height: 200px;
-        border-radius: 20px;
+        // width: 300px;
+        // height: 200px;
         overflow: hidden;
-        background-color: white;
     }
 .head_game_div{
     img{
