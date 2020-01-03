@@ -9,7 +9,7 @@
                         <div class="position_absolute desc_banner_box">
                             <div class="action_div text_center app_back_red white">PLAY</div>
                             <div class="font_size_15  font_weight_600">
-                                FRUIT
+                                {{item.title}}
                             </div>
                             <star></star>
                         </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="recta_div position_relative head_game_div overflow_hidden border_radius_20px"  @click="playGame">
+    <div class="recta_div position_relative xximg overflow_hidden border_radius_20px"  @click="playGame">
         <div class="position_relative overflow_hidden recta_box" :style="{'height': recta_box_height+'px'}">
             <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100 pcs" alt="">
         </div>
@@ -52,7 +52,7 @@ export default {
     .recta_div {
         overflow: hidden;
     }
-.head_game_div{
+.xximg{
     .back_linear{
         background: rgba(0,0,0,0.8);
     }

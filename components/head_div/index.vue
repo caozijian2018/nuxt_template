@@ -1,6 +1,6 @@
 <template>
     <div class="headDiv position_relative head_game_div overflow_hidden border_radius_20px"  @click="playGame">
-        <div class="position_relative overflow_hidden" :class="{'rectangle': rectangle}" >
+        <div class=" overflow_hidden">
             <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
         </div>
         <div class="position_absolute padding_left_1  position z_index12 back_linear" style="left:0; bottom:0; right:0;">
@@ -64,13 +64,11 @@ export default {
     img{
         transition-duration: .5s;
         width: 100%;
-        &.rectangle{
-            height: 50%;
-        }
     }
     &:hover{
         img{
-            transform: scale(1.5)
+            // transform-origin: 50% 50%;
+            transform: scale(1.4, 1.4);
         }
     }
     .position{

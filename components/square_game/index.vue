@@ -4,7 +4,7 @@
             <img src="../../static/img/python.png" class="height_100 pcs"  alt="">    
         </div>
         <div class="text_center font_size_15">
-            xasdasfasd
+            <!-- xasdasfasd -->
         </div>
     </div>
 </template>
