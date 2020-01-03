@@ -65,7 +65,10 @@ export default {
     }
     &:hover{
         img{
-            transform: scale(1.5)
+            // transform-origin: 50% 50%;
+           transform-origin: 50% 50%;
+                    transform: translate(-50%, -50%) scale(1.4, 1.4);
+                    transition: .3s;
         }
     }
     .position{
