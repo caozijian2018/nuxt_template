@@ -1,5 +1,5 @@
 <template>
-    <div class="big_box">
+    <div class="big_box width_80 margin_auto">
         <el-carousel
             class="flex_1 banner_big_box"
             arrow="always"

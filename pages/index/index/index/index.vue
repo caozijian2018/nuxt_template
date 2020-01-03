@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <red-line :lineText="strategy_game.big[0].title" class="margin_bottom_3"></red-line>
+                <red-line :lineText="lineText[1]" class="margin_bottom_3"></red-line>
                 <div>
                     <!-- <head-div :rectangle="true" :game="strategy_game.big[0]"></head-div> -->
                     <rectangle :rectangle="true" :game="strategy_game.big[0]"></rectangle>
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="flex_1 margin_left_38 phone_margin_left_0">
-                <red-line :lineText="puzzle_game.big[0].title" class="margin_bottom_3"></red-line>
+                <red-line :lineText="lineText[2]" class="margin_bottom_3"></red-line>
                 <game-text-bottom-row :game="puzzle_game.big[0]" class="margin_bottom_15"></game-text-bottom-row>
                 <game-div :game="k" v-for="k in puzzle_game.other" class="margin_bottom_2" :key="k.id"></game-div>
                 <red-line :lineText="lineText[3]" class="margin_bottom_3"></red-line>
