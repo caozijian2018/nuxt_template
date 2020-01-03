@@ -28,9 +28,9 @@
                 </div>
                 <red-line :lineText="lineText[1]" class="margin_bottom_3"></red-line>
                 <div>
-                    <head-div :game="strategy_game.big[0]"></head-div>
+                    <!-- <head-div :rectangle="true" :game="strategy_game.big[0]"></head-div> -->
+                    <rectangle :rectangle="true" :game="strategy_game.big[0]"></rectangle>
                 </div>
-
                 <div class="display_flex flex_jusify_space margin_top_20">
                     <game-div-text-bottom :game="i" class="width_32" v-for="i in strategy_game.other" :key="i.id"></game-div-text-bottom>
                 </div>
@@ -59,6 +59,8 @@
     import gameTextBottomRow from "../../../../components/game_text_bottom_row";
     import bannerBig from "../../../../components/banner_big";
     import appFooter from "../../../../components/footer";
+    import rectangle from "../../../../components/head_div_rectangle";
+
 
     export default {
         layout: "us",
@@ -71,7 +73,8 @@
             gameDivTextBottom,
             gameTextBottomRow,
             bannerBig,
-            appFooter
+            appFooter,
+            rectangle
         },
         data() {
             return {

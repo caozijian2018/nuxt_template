@@ -28,6 +28,10 @@
                         //选择index.htm
                         var arr = res.resources;
                         if (arr.length) {
+                            if(arr.length == 1){
+                                this.game_src = arr[0];
+                                return
+                            }
                                 for (var k of arr) {
                                     var is_this_url = k.indexOf("index.htm") > -1;
                                     if (is_this_url) {

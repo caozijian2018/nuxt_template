@@ -1,7 +1,7 @@
 <template>
-    <div class="headDiv position_relative head_game_div overflow_hidden border_radius_20px"  @click="playGame">
-        <div class="position_relative overflow_hidden" :class="{'rectangle': rectangle}" >
-            <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100" alt="">
+    <div class="recta_div position_relative head_game_div overflow_hidden border_radius_20px"  @click="playGame">
+        <div class="position_relative overflow_hidden recta_box" :style="{'height': recta_box_height+'px'}">
+            <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100 pcs" alt="">
         </div>
         <div class="position_absolute padding_left_1  position z_index12 back_linear" style="left:0; bottom:0; right:0;">
             <span class="white font_size_10">{{game.title}}</span>
@@ -21,17 +21,23 @@ export default {
         game: {
             type: Object
         },
-        rectangle: {
-            type: Boolean,
-            default: false
-        }
+    },
+    mounted(){
+        this.setHeight();
     },
     components: {
         star
     },
+    data(){
+        return {
+            recta_box_height: 0
+        }
+    },
     methods: {
         setHeight(){
-
+            console.log(333)
+            var width = this.$jquery(".recta_box")[0].offsetWidth;
+            this.recta_box_height = width / 1.3
         },
         playGame() {
             this.$router.push({
@@ -43,18 +49,7 @@ export default {
 
 </script>
 <style lang='less'>
-    .headDiv {
-        .rectangle{
-            // height
-            img{
-                // transform: scale(0.5);
-                // height: 50%;
-                // width: 30vw;
-                // height: 15v;
-            }
-        }
-        // width: 300px;
-        // height: 200px;
+    .recta_div {
         overflow: hidden;
     }
 .head_game_div{
