@@ -1,5 +1,4 @@
 import axios from "axios";
-console.log('ffffffffffffffffff')
 console.log(process.env.baseUrl)
 const service = axios.create({
     timeout: 10000,

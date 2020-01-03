@@ -1,7 +1,6 @@
 <template>
     <div class="width_100">
         <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="'http://assets.likelikeyour.com/'+game_src">
-
         </iframe>
     </div>
 </template>
@@ -24,12 +23,32 @@
             getGame() {
                 this.$http("dcb/album/" + this.game_id + "/")
                     .then(res => {
-                        this.game_src = res.resources[0]
+                        this.$nuxt.$loading.finish();
+                        // this.game_src = res.resources[0]
+                        //选择index.htm
+                        var arr = res.resources;
+                        if (arr.length) {
+                                for (var k of arr) {
+                                    var is_this_url = k.indexOf("index.htm") > -1;
+                                    if (is_this_url) {
+                                        this.game_src = k;
+                                        return;
+                                    }
+                                }
+                                this.$msg("url's error!", "error");
+                        } else {
+                            this.$msg(this.$t("words.vip_be_overdue"), "warning");
+                            this.$router.go(-1);
+                        }
+                        //
                     })
             }
         },
         mounted() {
-            this.getGameId()
+            this.$nextTick(()=>{
+                this.$nuxt.$loading.start();
+                this.getGameId()
+            });
         },
         created() {
 

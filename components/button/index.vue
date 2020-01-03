@@ -1,17 +1,22 @@
 <template>
-    <div class="app_of_button">xxxx</div>
+    <div class="app_of_button">{{text}}</div>
 </template>
 
 <script>
 export default {
-
+    props: {
+        text:{
+            type: String,
+            default: "Submit"
+        }
+    }
 }
 
 </script>
 <style lang='less'>
 @import "../../assets/css/them";
 .app_of_button{
-    .app_back_black;
+    background: orange;
     height: 50px;
     line-height: 50px;
     color: white;

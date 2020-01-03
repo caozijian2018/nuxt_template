@@ -24,11 +24,11 @@
             </div>
         </div>
         <div id="terms_box" class="font_size_13 margin_top_10 text_center white phone_text_center width_97 margin_auto">
-            <span>Terms</span>
+            <!-- <span>Terms</span>
             <span>|</span>
             <span>Terms</span>
             <span>|</span>
-            <span>Terms</span>
+            <span>Terms</span> -->
         </div>
     </div>
 

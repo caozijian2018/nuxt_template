@@ -1,5 +1,5 @@
 <template>
-    <div id="about" class="margin_top_4">
+    <div id="about" class="margin_top_4 white">
         <div class="width_60 margin_auto phone_width_80">
             <div class="font_size_20 font_weight_600 text_center margin_left_20 margin_bottom_15">Contact Us</div>
             <div class="text_center width_80 margin_auto font_size_1 margin_bottom_3">
@@ -9,7 +9,7 @@
             </div>
             <div class="display_flex flex_jusify_space phone_block">
                 <div class="width_49 phone_width_100">
-                    <div class="font_size_15 padding_left_1" >
+                    <div class="font_size_15 padding_left_1">
                         your name
                     </div>
                     <!-- <el-input v-model="name" ></el-input> -->
@@ -17,9 +17,9 @@
                 </div>
                 <div class="width_49 phone_width_100">
                     <div class="font_size_15 padding_left_1">
-                        your name
+                        your job
                     </div>
-                    <input type="text" class="input_app">
+                    <input type="text" v-model="job" class="input_app" >
                 </div>
             </div>
             <div class="display_flex phone_block flex_jusify_space margin_top_20 phone_margin_top_0">
@@ -27,13 +27,13 @@
                     <div class="font_size_15 padding_left_1" >
                         Service
                     </div>
-                    <input type="text" class="input_app">
+                    <input type="text" v-model="service" class="input_app">
                 </div>
                 <div class="width_49 phone_width_100">
                     <div class="font_size_15 padding_left_1">
                         your Phone
                     </div>
-                    <input type="text" class="input_app">
+                    <input type="text" v-model="phone" class="input_app">
                 </div>
             </div>
             <!--  -->
@@ -41,14 +41,14 @@
                 <div class="font_size_15 padding_left_1">
                     Your Message
                 </div>
-                <textarea class="textareat"></textarea>
+                <textarea class="textareat" v-model="text"></textarea>
             </div>
             <div class="margin_top_20">
                 <div class="text_center">
                     <input type="checkbox" class="checkbox_div"  name="" id=""> Notice About App Launch
                 </div>
                 <div class="margin_top_20 margin_auto width_200px">
-                    <app-button></app-button>
+                    <app-button @click.native="SubmitClick()"></app-button>
                 </div>
             </div>
         </div>
@@ -67,12 +67,33 @@ import appFooter from "../../../components/footer"
 export default {
     data(){
         return {
-            name: ""
+            name: "",
+            job: "",
+            text: "",
+            phone: "",
+            service: ""
         }
     },
     components: {
         appButton,
         appFooter
+    },
+    methods: {
+        
+        SubmitClick(){
+            if(!(this.name&&this.job&&this.text&&this.phon&&this.service)){
+                this.$msg("Please enter the correct value");
+                return 
+            }
+            setTimeout(()=>{
+                this.$msg("success");
+                this.name = ""
+                this.job = ""
+                this.text = ""
+                this.phone = ""
+                this.service = ""
+            },2000)
+        },
     }
 }
 

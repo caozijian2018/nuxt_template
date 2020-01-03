@@ -9,7 +9,7 @@ import Vue from "vue";
 import allRequest from "../util/glo_request";
 Vue.prototype.$http = allRequest;
 import "../util/filter";
-// import "../util/msg";
+import "../util/msg";
 import "../util/es62es5";
 import jquery from "jquery";
 Vue.prototype.$jquery = jquery;

@@ -23,14 +23,16 @@ export default {
 <style scoped>
 .loading-page {
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
+    color:  #fff;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 1);
     text-align: center;
     padding-top: 200px;
     font-size: 30px;
     font-family: sans-serif;
+    z-index: 13;
 }
 </style>
