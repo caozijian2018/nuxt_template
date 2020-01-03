@@ -5,7 +5,7 @@
         </div>
         <div class="margin_top_10 white display_flex flex_jusify_space">
             <span class="font_size_10">{{game.title}}</span>
-            <star :text-is-red="true"></star>
+            <star :text-is-red="true" :stars="game.score"></star>
         </div>
     </div>
 </template>

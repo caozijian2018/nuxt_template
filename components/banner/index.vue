@@ -21,21 +21,30 @@
                 <head-div :game="i" class="width_49 margin_bottom_10" v-for="i in list" :key="i.id"></head-div>
             </div>
         </div>
+        <!--  -->
+        <div class="width_97 margin_top_3 margin_auto display_flex wrop flex_jusify_space">
+            <!-- xxxxx -->
+            <game-div :game="i" class="width_24 phone_width_49" v-for="i in list_four" :key="i.id"></game-div>
+        </div>
     </div>
 </template>
 <script>
     import headDiv from "../../components/head_div"
     import star from "../../components/star"
+    import gameDiv from "../../components/game_div";
+
 
     import {mapGetters} from "vuex";
 
     export default {
         components: {
             headDiv,
-            star
+            star,
+            gameDiv
         },
         data() {
             return {
+                list_four: [],
                 list: [
                     {
                         id: 1,
@@ -137,12 +146,17 @@
                 });
                 this.$http("dcb/album/", "get", {
                     capacity: 999,
-                    ordering: "-show_cnt",
+                    ordering: "-created",
                     category: "HH5",
                     page: 1,
                     lang: "en"
                 }).then(res => {
                     this.list = res.results.slice(0, 4);
+                    this.list_four = res.results.slice(4, 8);
+                    console.log(999)
+                    console.log(this.list_four)
+                    console.log(999)
+
                 }).catch(res => {});
             }
         }

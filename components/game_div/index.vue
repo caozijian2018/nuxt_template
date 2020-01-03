@@ -7,7 +7,7 @@
             <span class="white">
                 {{game.title}}
             </span>
-            <star :text-is-red="true"></star>
+            <star :text-is-red="true" :stars="game.score"></star>
         </div>
     </div>
 </template>

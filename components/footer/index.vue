@@ -6,9 +6,9 @@
                     <div class="width_40 phone_width_100 text_center" style="margin: auto">
                         <img src="../../static/img/logo.png" class="width_40" alt="">
                         <div class="white font_size_13">
-                            My Game Party is a premium HTML 5 game portal specially designed for mobile phone users with
+                            <!-- My Game Party is a premium HTML 5 game portal specially designed for mobile phone users with
                             the spirit of of trying and challenging. The game portal is developed by Zhongyun HK Limited
-                            and will be updated with 3-5 games regularly each month.
+                            and will be updated with 3-5 games regularly each month. -->
                         </div>
                     </div>
                 </div>

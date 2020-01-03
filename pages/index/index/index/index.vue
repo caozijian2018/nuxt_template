@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="width_97 margin_top_3 margin_auto display_flex wrop flex_jusify_space">
+        <!-- <div class="width_97 margin_top_3 margin_auto display_flex wrop flex_jusify_space">
             <game-div :game="i" class="width_24 phone_width_49" v-for="i in list.small" :key="i.id"></game-div>
-        </div>
+        </div> -->
         <div class="width_97 margin_auto margin_top_3 phone_block margin_bottom_3 display_flex">
             <div class="flex_2">
                 <red-line :lineText="adventure_game.big[0].title" class="margin_bottom_3"></red-line>
@@ -496,7 +496,7 @@
                             this.others_game.other = res_data.slice(0, 4);
                         } else {
                             this.list.big = res_data.slice(0, 4);
-                            this.list.small = res_data.slice(4, 8);
+                            this.list.small = res_data.slice(2, 6);
                         }
                     }
                 });

@@ -5,7 +5,7 @@
         </div>
         <div class="position_absolute padding_left_1  position z_index12 back_linear" style="left:0; bottom:0; right:0;">
             <span class="white font_size_10">{{game.title}}</span>
-            <star></star>
+            <star :stars="game.score"></star>
         </div>
     </div>
 </template>
