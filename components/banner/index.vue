@@ -119,7 +119,7 @@
                     // console.log(this.$store.getters.getBannerHeight);
                 } else {
                     this.$nextTick(() => {
-                        this.$store.commit("changeBannerHeight", parseInt(this.$jquery(this.$jquery('.banner_box')[0]).css("width")) / 1.5 || innerWidth / 1.5 + "px");
+                        this.$store.commit("changeBannerHeight", parseInt(this.$jquery(this.$jquery('.banner_box')[0]).css("width")) / 1.2 || innerWidth / 1.2 + "px");
                     })
                 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="width_100">
+    <div class="width_100 height_100">
         <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="'http://assets.likelikeyour.com/'+game_src">
         </iframe>
     </div>
@@ -59,11 +59,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     #game {
-        position: absolute;
+        /* position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 99;
+        z-index: 99; */
     }
 </style>

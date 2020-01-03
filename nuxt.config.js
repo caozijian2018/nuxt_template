@@ -5,7 +5,7 @@ export default {
      ** Headers of the page
      */
     head: {
-        title: "mygameparty",
+        title: "My Game Party",
         meta: [
             {
                 charset: "utf-8"

@@ -4,7 +4,7 @@
             <!-- <div class="hoverdiv headdivback" style="top: 60%">
 
             </div> -->
-            <img :src="'http://assets.mygameparty.com/' + game.cover" class=" width_100" alt="">
+            <img :src="'http://assets.mygameparty.com/' + game.cover"  class=" width_100" alt="">
         </div>
         <div class="position_absolute padding_left_1  position z_index12 back_linear" style="left:0; bottom:0; right:0;">
             <span class="white font_size_10">{{game.title}}</span>
