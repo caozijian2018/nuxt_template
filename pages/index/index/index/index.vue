@@ -5,7 +5,7 @@
         </div>
         <div class="width_97 margin_auto margin_top_3 phone_block margin_bottom_3 display_flex">
             <div class="flex_2">
-                <red-line :lineText="lineText[0]" class="margin_bottom_3"></red-line>
+                <red-line :lineText="adventure_game.big[0].title" class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1" @click="playGame">
                         <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" v-if="adventure_game.big[0]" class="width_100 margin_bottom_2" alt/>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <red-line :lineText="lineText[1]" class="margin_bottom_3"></red-line>
+                <red-line :lineText="strategy_game.big[0].title" class="margin_bottom_3"></red-line>
                 <div>
                     <!-- <head-div :rectangle="true" :game="strategy_game.big[0]"></head-div> -->
                     <rectangle :rectangle="true" :game="strategy_game.big[0]"></rectangle>
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="flex_1 margin_left_38 phone_margin_left_0">
-                <red-line :lineText="lineText[2]" class="margin_bottom_3"></red-line>
+                <red-line :lineText="puzzle_game.big[0].title" class="margin_bottom_3"></red-line>
                 <game-text-bottom-row :game="puzzle_game.big[0]" class="margin_bottom_15"></game-text-bottom-row>
                 <game-div :game="k" v-for="k in puzzle_game.other" class="margin_bottom_2" :key="k.id"></game-div>
                 <red-line :lineText="lineText[3]" class="margin_bottom_3"></red-line>
@@ -490,7 +490,7 @@
                             this.strategy_game.other = res_data.slice(1, 4);
                         } else if (tag === 75) {
                             this.puzzle_game.big = res_data.slice(0, 1);
-                            this.puzzle_game.other = res_data.slice(1, 4);
+                            this.puzzle_game.other = res_data.slice(1, 3);
                         } else if (tag === 76) {
                             this.others_game.big = res_data.slice(0, 1);
                             this.others_game.other = res_data.slice(0, 4);
