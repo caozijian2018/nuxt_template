@@ -53,7 +53,7 @@ export default {
                 // console.log(this.$store.getters.getBannerHeight);
             }else{
                 this.$nextTick(() => {
-                    this.$store.commit("changeBigBannerHeight", parseInt(this.$jquery(this.$jquery('.banner_big_box')[0]).css("width")) / 2 || innerWidth / 2 + "px");
+                    this.$store.commit("changeBigBannerHeight", parseInt(this.$jquery(this.$jquery('.banner_big_box')[0]).css("width")) / 2.5 || innerWidth / 2.5 + "px");
                 })
             }
 

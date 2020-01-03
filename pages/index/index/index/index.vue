@@ -5,11 +5,11 @@
         </div> -->
         <div class="width_97 margin_auto margin_top_3 phone_block margin_bottom_3 display_flex">
             <div class="flex_2">
-                <red-line :lineText="adventure_game.big[0].title" class="margin_bottom_3"></red-line>
+                <red-line :lineText="lineText[0]" class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1" @click="playGame">
                         <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" v-if="adventure_game.big[0]" class="width_100 margin_bottom_2" alt/>
-                        <div class="font_size_2 margin_bottom_2 margin_top_20 white">GAME REVIEW</div>
+                        <div class="font_size_2 margin_bottom_2 margin_top_20 white">{{adventure_game.big[0].title}}</div>
                         <div>
                             <star :textIsRed="true"></star>
                         </div>
