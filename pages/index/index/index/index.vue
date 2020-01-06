@@ -8,7 +8,9 @@
                 <red-line :lineText="lineText[0]" class="margin_bottom_3"></red-line>
                 <div class="display_flex margin_bottom_3 phone_block">
                     <div class="flex_1" @click="playGame">
-                        <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" v-if="adventure_game.big[0]" class="width_100 margin_bottom_2" alt/>
+                        <div class="width_100 overflow_hidden margin_bottom_2">
+                            <img :src="'http://assets.mygameparty.com/' +  adventure_game.big[0].cover" v-if="adventure_game.big[0]" class="width_100  scalseimg" alt/>
+                        </div>
                         <div class="font_size_2 margin_bottom_2 margin_top_20 white">{{adventure_game.big[0].title}}</div>
                         <div>
                             <star :textIsRed="true"></star>
@@ -539,4 +541,11 @@
     };
 </script>
 <style lang='less'>
+.scalseimg{
+    border-radius: 4px;
+    transition-duration: .4s;
+    &:hover{
+        transform: scale(1.5);
+    }
+}
 </style>

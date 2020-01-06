@@ -8,8 +8,8 @@
                     <!--<square-game v-for="i in 1" class="margin_bottom_10" :key="i"></square-game>-->
                 <!--</div>-->
                 <!--<red-line class="margin_bottom_3"></red-line>-->
-                <div class="display_flex flex_jusify_space wrop">
-                    <game-div-text-bottom :game="i" class="width_32 margin_bottom_10" v-for="i in list.other" :key="i.id"></game-div-text-bottom>
+                <div class="display_flex  wrop">
+                    <game-div-text-bottom :game="i" class="phone_margin_left_3px margin_left_10px width_32 margin_bottom_10" v-for="i in list.other" :key="i.id"></game-div-text-bottom>
                 </div>
             </div>
             <div class="flex_1 margin_left_38 phone_margin_left_0" style="margin-bottom: 20px">
@@ -238,5 +238,13 @@ export default {
     .red_line {
         width: 4px;
         .app_back_red;
+    }
+    .margin_left_10px{
+        margin-left: 7px;
+    }
+    @media screen and(max-width: 800px){
+        .phone_margin_left_3px{
+            margin-left: 3px;
+        }
     }
 </style>

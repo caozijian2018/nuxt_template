@@ -4,6 +4,15 @@ export default {
     /*
      ** Headers of the page
      */
+    generate:{
+        routes: [
+            '/',
+            '/categary/73?name=ADVENTURE',
+            '/categary/74?name=STRATEGY',
+            '/categary/75?name=PUZZLE',
+            '/categary/76?name=OTHERS'
+        ]
+    },
     head: {
         title: "My Game Party",
         meta: [
