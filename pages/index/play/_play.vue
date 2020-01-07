@@ -1,6 +1,6 @@
 <template>
     <div class="width_100 height_100">
-        <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="getGame()">
+        <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="'http://assets.likelikeyour.com/'+game_src">
         </iframe>
     </div>
 </template>
@@ -20,7 +20,7 @@
                 if(this.game_src.indexOf("http") > -1){
                     return this.game_src
                 }else{
-                    return 'http://assets.mygameparty.com/'+game_src;
+                    return 'http://assets.likelikeyour.com/'+game_src;
                 }
             },
             getGameId() {
