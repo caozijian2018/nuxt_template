@@ -17,10 +17,12 @@
         },
         computed:{
             getGamesrc(){
-                if(this.game_src.indexOf("http") > -1){
-                    return this.game_src
-                }else{
-                    return 'http://assets.likelikeyour.com/'+this.game_src;
+                if(this.game_src){
+                    if(this.game_src.indexOf("http") > -1){
+                        return this.game_src
+                    }else{
+                        return 'http://assets.likelikeyour.com/'+this.game_src;
+                    }
                 }
             },
         },
