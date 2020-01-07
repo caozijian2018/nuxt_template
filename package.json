@@ -15,7 +15,7 @@
     "build": "NODE_ENV=prod nuxt build",
     "build_dev_online": "NODE_ENV=dev_online nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "NODE_ENV=prod nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",

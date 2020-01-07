@@ -1,5 +1,5 @@
 git pull
 yarn install
 yarn build
-# yarn generate
+yarn generate
 pm2 restart mygameparty
