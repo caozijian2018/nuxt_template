@@ -1,6 +1,6 @@
 <template>
     <div class="width_100 height_100">
-        <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="'http://assets.likelikeyour.com/'+game_src">
+        <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="getGamesrc">
         </iframe>
     </div>
 </template>
@@ -15,14 +15,17 @@
                 game_src: ""
             }
         },
-        methods: {
-            getGame(){
+        computed:{
+            getGamesrc(){
                 if(this.game_src.indexOf("http") > -1){
                     return this.game_src
                 }else{
-                    return 'http://assets.likelikeyour.com/'+game_src;
+                    return 'http://assets.likelikeyour.com/'+this.game_src;
                 }
             },
+        },
+        methods: {
+            
             getGameId() {
                 this.game_id = this.$route.params.play;
                 this.getGame()
@@ -61,9 +64,6 @@
                 this.getGameId()
             });
         },
-        created() {
-
-        }
     }
 </script>
 
