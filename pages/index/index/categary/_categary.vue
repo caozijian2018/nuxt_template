@@ -214,7 +214,7 @@ export default {
             }).then(res => {
                 let data = res.results;
                 this.list.top = data[0];
-                this.list.two = data.slice(1, 3);
+                this.list.two = data.slice(1, 4);
                 this.list.other = data.slice(4);
             }).catch(res => {});
         }

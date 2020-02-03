@@ -1,6 +1,6 @@
 <template>
     <div class="width_100 height_100">
-        <iframe id="game" autoplay class="height_100 width_100" controls="controls" preload  :src="getGamesrc">
+        <iframe id="game" autoplay class="height_100 width_100" controls="controls" v-if="getGamesrc"  :src="getGamesrc">
         </iframe>
     </div>
 </template>
