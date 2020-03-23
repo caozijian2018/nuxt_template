@@ -17,7 +17,16 @@ import init_token from "../util/init_token";
 init_token();
 export default {
     // layout: "us",
-    mounted() {}
+    mounted() {
+        this.SetToken();
+    },
+    methods: {
+        SetToken(){
+            this.$http('get_file_pass_token/').then(res=>{
+            this.$store.commit('changetoken', res.file_token);
+            })
+        },
+    }
 };
 </script>
 

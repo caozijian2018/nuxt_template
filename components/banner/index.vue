@@ -5,7 +5,7 @@
                          indicator-position="inside">
                 <el-carousel-item v-for="item in bannerList" :key="item.jump_url">
                     <div @click="playGame(item)">
-                        <img :src="item.img_url" class="width_100 border_radius_20px" alt="">
+                        <img :src="item.img_url+'?AuthInfo='+$store.state.file_token" class="width_100 border_radius_20px" alt="">
                         <div class="position_absolute desc_banner_box">
                             <div class="action_div text_center app_back_red white">PLAY</div>
                             <div class="font_size_15  font_weight_600">

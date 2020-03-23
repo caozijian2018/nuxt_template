@@ -6,7 +6,8 @@ export const state = () => ({
     is_pc: false,
     show_hover: false,
     row_game_div_height: 0,
-    head_div_height: 0
+    head_div_height: 0,
+    file_token: ""
 
 });
 export const getters = {
@@ -32,6 +33,9 @@ export const getters = {
 export const mutations = {
     changeHeadDivHeight(state, head_div_height) {
         state.head_div_height = head_div_height;
+    },
+    changetoken(state, file_token) {
+        state.file_token = file_token;
     },
     changeRowGameDivHeight(state, row_game_div_height) {
         state.row_game_div_height = row_game_div_height;

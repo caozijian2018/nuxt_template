@@ -1,7 +1,7 @@
 <template>
     <div class="width_100 bottom_rowgame overflow_hidden" @click="playGame">
         <div class="border_radius_20px">
-            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
+            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover+'?AuthInfo='+$store.state.file_token" alt="">
         </div>
         <div class="margin_top_10 white display_flex flex_jusify_space">
             <span class="font_size_10">{{game.title}}</span>

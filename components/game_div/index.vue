@@ -1,7 +1,7 @@
 <template>
     <div class="display_flex width_100 phone_block gamedi " @click="playGame">
         <div class="flex_1 overflow_hidden border_radius_20px" style="background-color: white">
-            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover" alt="">
+            <img class="width_100" :src="'http://assets.mygameparty.com/' + game.cover+'?AuthInfo='+$store.state.file_token" alt="">
         </div>
         <div class="flex_1 font_size_15 margin_left_8">
             <span class="white">

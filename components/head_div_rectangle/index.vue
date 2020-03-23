@@ -1,7 +1,7 @@
 <template>
     <div class="recta_div position_relative xximg overflow_hidden border_radius_20px"  @click="playGame">
         <div class="position_relative overflow_hidden recta_box" :style="{'height': recta_box_height+'px'}">
-            <img :src="'http://assets.mygameparty.com/' + game.cover" class="width_100 pcs" alt="">
+            <img :src="'http://assets.mygameparty.com/' + game.cover+'?AuthInfo='+$store.state.file_token" class="width_100 pcs" alt="">
         </div>
         <div class="position_absolute padding_left_1  position z_index12 back_linear" style="left:0; bottom:0; right:0;">
             <span class="white font_size_10">{{game.title}}</span>
