@@ -20,3 +20,6 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+需求提出：张艳阳
+归属主体：dreamfii
