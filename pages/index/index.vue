@@ -15,7 +15,7 @@
 <script>
 import glo_axios from "../../util/glo_request";
 import isPc from "../../util/is_pc";
-
+import initOp from "../../util/init_op";
 import appHead from "../../components/app_header";
 import i18n from "../../plugins/i18n";
 export default {
@@ -53,6 +53,10 @@ export default {
         };
     },
     methods: {
+        saveOp() {
+            var op = this.$route.query.op || this.$route.query.country;
+            initOp(op);
+        },
         watchOnresize() {
             window.onresize = this.setHeightAndPhoneOrPc;
         },
@@ -69,6 +73,7 @@ export default {
     },
     mounted() {
         this.watchOnresize();
+        this.saveOp();
         this.setHeightAndPhoneOrPc();
         // this.jdt();
         this._i18n.locale = "es";

@@ -2,7 +2,9 @@
     <div>
         <div class="app_heahder phone_none">
             <div class="width_97 display_flex flex_jusify_space margin_auto  height_100">
-                <img src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
+                <img v-if="op=='mg'" src="../../static/img/logo1.png" class="width_15 phone_width_30p" alt="">
+                <img v-else src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
+
                 <div class="width_80 height_100 display_flex flex_align_center">
                     <img src="../../static/img/head_logo_right.jpg" class="width_100" style="height: 50px" alt="">
                 </div>
@@ -28,7 +30,8 @@
             <div class="width_90 margin_auto height_100 flex_align_center display_flex flex_jusify_space white">
                 <i class="iconfont icon-xuanxiang option_icon" @click="clickOption()"
                    :class="{'rotate90deg': this.show_select}" style="font-size: 30px"></i>
-                <img src="../../static/img/logo.png" class="width_33" alt="">
+                <img v-if="op=='mg'" src="../../static/img/logo1.png" class="width_33" alt="">
+                <img v-else src="../../static/img/logo.png" class="width_33" alt="">
                 <i class="iconfont icon-xuanxiang" style="font-size: 30px;color:transparent"></i>
             </div>
         </div>
@@ -43,10 +46,13 @@
 
 <script>
     import bus from "../../util/bus"
+    import getOp from "../../util/get_country"
+
 
     export default {
         data() {
             return {
+                op: "",
                 show_select: false,
                 selected_name: "",
                 head_title_arr: [
@@ -58,7 +64,11 @@
                 ]
             }
         },
-        mounted() {},
+        mounted() {
+            this.$nextTick(()=>{
+                this.op = getOp()
+            })
+        },
         methods: {
             goTag(tag, name) {
                 // console.log(tag)
