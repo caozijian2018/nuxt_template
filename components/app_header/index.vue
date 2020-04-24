@@ -2,9 +2,7 @@
     <div>
         <div class="app_heahder phone_none">
             <div class="width_97 display_flex flex_jusify_space margin_auto  height_100">
-                <img v-if="op=='mg'" src="../../static/img/logo1.png" class="width_15 phone_width_30p" alt="">
-                <img v-else src="../../static/img/logo.png" class="width_15 phone_width_30p" alt="">
-
+                <img :src="logo_src" class="width_15 phone_width_30p" alt="">
                 <div class="width_80 height_100 display_flex flex_align_center">
                     <img src="../../static/img/head_logo_right.jpg" class="width_100" style="height: 50px" alt="">
                 </div>
@@ -61,12 +59,20 @@
                     {id: 3, name: "STRATEGY", color: "#D65F00", tag_id: 74},
                     {id: 4, name: "PUZZLE", color: "#1F6ED4", tag_id: 75},
                     {id: 5, name: "OTHERS", color: "#79bd9a", tag_id: 76}
-                ]
+                ],
+                logo_src: "",
+                logo_mg: require("../../static/img/logo1.png"),
+                logo_others: require("../../static/img/logo.png"),
             }
         },
         mounted() {
             this.$nextTick(()=>{
                 this.op = getOp()
+                if(this.op=='mg'){
+                    this.logo_src = this.logo_mg;
+                }else{
+                    this.logo_src = this.logo_others;
+                }
             })
         },
         methods: {
