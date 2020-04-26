@@ -27,10 +27,12 @@
             },
         },
         methods: {
-            
             getGameId() {
                 this.game_id = this.$route.params.play;
-                this.getGame()
+                this.$http('get_file_pass_token/').then(res=>{
+                    this.$store.commit('setFileToken', res.file_token)
+                    this.getGame()
+                })
             },
             getGame() {
                 this.$http("dcb/album/" + this.game_id + "/")
