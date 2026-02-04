@@ -3,6 +3,6 @@ const api_url={
     site:"site/",
     tag:"tag/",
     user:"user/",
-    login:"login/",
+    login:"login/1",
 }
 export  default api_url; 
